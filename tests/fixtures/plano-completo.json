@@ -1,0 +1,577 @@
+{
+  "schema_version": "senai-plano-ensino-1.0",
+  "identificacao": {
+    "curso": "Técnico em Desenvolvimento de Sistemas",
+    "carga_horaria_curso": 1200,
+    "modalidade": "Presencial",
+    "unidade_curricular": "Desenvolvimento Web Front-End",
+    "carga_horaria_uc": 40,
+    "modulo": "Módulo II",
+    "turma": "TDS-2026-1B",
+    "ambiente": "Laboratório de Informática 04",
+    "objetivo_geral": "Capacitar os estudantes na construção de soluções web responsivas, seguras e integradas a banco de dados."
+  },
+  "dados_oficiais": {
+    "capacidades_tecnicas": [
+      "Identificar requisitos de software e regras de negócio para aplicações web",
+      "Estilizar interfaces digitais com CSS3 e frameworks responsivos",
+      "Programar interatividade client-side com JavaScript moderno",
+      "Identificar vulnerabilidades em requisições HTTP e rotas de API",
+      "Modelar banco de dados relacional e aplicar rotinas SQL"
+    ],
+    "capacidades_socioemocionais": [
+      "Trabalhar em equipe com comunicação assertiva e proatividade"
+    ],
+    "conhecimentos": [
+      "Conceitos de HTML5 e semântica web",
+      "CSS3 Flexbox e Grid Layout",
+      "Manipulação do DOM com JavaScript",
+      "Segurança Web (OWASP Top 10)",
+      "Modelagem MER e DER / Comandos SQL (DDL e DML)"
+    ]
+  },
+  "situacoes_aprendizagem": [
+    {
+      "numero": 1,
+      "nome": "SA01",
+      "carga_horaria": 16,
+      "estrategia": "Estudo de Caso com Metodologia Ágil",
+      "contextualizacao": "Desenvolvimento de uma plataforma web responsiva para e-commerce institucional.",
+      "qtdCapacidadesTecnicas": 3,
+      "qtdCapacidadesSocioemocionais": 1,
+      "aulas": [
+        {
+          "sa_id": "SA01",
+          "numero": 1,
+          "data": "2026-03-15",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Identificar requisitos de software e regras de negócio para aplicações web"
+          ],
+          "conhecimentos": [
+            "Conceitos de HTML5 e semântica web",
+            "Arquitetura Client-Server"
+          ],
+          "desafio": "Elaborar protótipo navegável e estruturado para o módulo de cadastro.",
+          "resultado_esperado": "Protótipo funcional validado sem erros estruturais.",
+          "estrategias_ensino": [
+            "Aula expositiva dialogada",
+            "Estudo dirigido de prototipagem"
+          ],
+          "descricao_atividade": [
+            "Mapeamento de elementos semânticos HTML5 e criação dos formulários de entrada."
+          ],
+          "roteiro_temporal": [
+            "00:00–00:50 — Apresentação dos conceitos de semântica HTML5",
+            "00:50–02:00 — Exercício prático de estruturação de tags",
+            "02:00–04:00 — Construção e validação do protótipo em laboratório"
+          ],
+          "instrumentos_avaliacao": [
+            "Observação direta com ficha de acompanhamento"
+          ],
+          "descricao_avaliacao": [
+            "Verificação da corretude semântica e acessibilidade das tags."
+          ],
+          "evidencias_aprendizagem": [
+            "Código HTML5 validado pelo W3C Validator"
+          ],
+          "entrega_estudante": [
+            "Link do repositório Git com os arquivos .html"
+          ]
+        },
+        {
+          "sa_id": "SA01",
+          "numero": 2,
+          "data": "2026-03-16",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Estilizar interfaces digitais com CSS3 e frameworks responsivos"
+          ],
+          "conhecimentos": [
+            "CSS3 Flexbox e Grid Layout",
+            "Design Responsivo (Media Queries)"
+          ],
+          "desafio": "Implementar a estilização responsiva adaptável para dispositivos móveis.",
+          "resultado_esperado": "Layout adaptável para dispositivos móveis, tablet e desktop.",
+          "estrategias_ensino": [
+            "Demonstração prática orientada pelo docente",
+            "Laboratório individual"
+          ],
+          "descricao_atividade": [
+            "Aplicação de regras CSS Flexbox e Grid Layout para responsividade."
+          ],
+          "roteiro_temporal": [
+            "00:00–01:00 — Apresentação dos conceitos de Flexbox e Grid",
+            "01:00–03:00 — Codificação do layout responsivo",
+            "03:00–04:00 — Testes de breakpoints em múltiplos dispositivos"
+          ],
+          "instrumentos_avaliacao": [
+            "Rubrica analítica de estilo"
+          ],
+          "descricao_avaliacao": [
+            "Avaliação da adaptação visual e ausência de barra de rolagem horizontal."
+          ],
+          "evidencias_aprendizagem": [
+            "Folha de estilo CSS3 organizada e responsiva"
+          ],
+          "entrega_estudante": [
+            "Arquivo estilos.css atualizado no repositório"
+          ]
+        },
+        {
+          "sa_id": "SA01",
+          "numero": 3,
+          "data": "2026-03-17",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Programar interatividade client-side com JavaScript moderno"
+          ],
+          "conhecimentos": [
+            "Manipulação do DOM com JavaScript",
+            "Eventos e Validação de Formulários"
+          ],
+          "desafio": "Adicionar validação de formulário client-side com feedback em tempo real.",
+          "resultado_esperado": "Formulário com feedback visual dinâmico antes do envio.",
+          "estrategias_ensino": [
+            "Coding session interativa",
+            "Resolução de problemas em dupla"
+          ],
+          "descricao_atividade": [
+            "Captura de eventos input/submit e manipulação de classes CSS pelo DOM."
+          ],
+          "roteiro_temporal": [
+            "00:00–01:00 — Revisão de seletores DOM e event listeners",
+            "01:00–03:00 — Codificação dos algoritmos de validação",
+            "03:00–04:00 — Testes de exceção e tratamento de erros"
+          ],
+          "instrumentos_avaliacao": [
+            "Teste prático de execução em tempo de compilação"
+          ],
+          "descricao_avaliacao": [
+            "Verificação do funcionamento dos alertas e feedback ao usuário."
+          ],
+          "evidencias_aprendizagem": [
+            "Script JS funcional manipulando elementos DOM"
+          ],
+          "entrega_estudante": [
+            "Arquivo app.js funcional integrado à página"
+          ]
+        },
+        {
+          "sa_id": "SA01",
+          "numero": 4,
+          "data": "2026-03-18",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Programar interatividade client-side com JavaScript moderno"
+          ],
+          "capacidades_socioemocionais": [
+            "Trabalhar em equipe com comunicação assertiva e proatividade"
+          ],
+          "conhecimentos": [
+            "Consumo de APIs assíncronas (Fetch API / Async-Await)"
+          ],
+          "desafio": "Integrar a interface a um serviço web externo de CEP/Endereço.",
+          "resultado_esperado": "Preenchimento automático do endereço via Fetch API.",
+          "estrategias_ensino": [
+            "Pair programming em dupla",
+            "Discussão técnica de integração"
+          ],
+          "descricao_atividade": [
+            "Requisições assíncronas HTTP usando Promises e Async/Await."
+          ],
+          "roteiro_temporal": [
+            "00:00–01:00 — Conceitos de assincronismo em JS",
+            "01:00–03:00 — Implementação da busca de CEP",
+            "03:00–04:00 — Integração com a equipe e revisão cruzada de código"
+          ],
+          "instrumentos_avaliacao": [
+            "Ficha de avaliação de desempenho em grupo"
+          ],
+          "descricao_avaliacao": [
+            "Verificação da integração com a API e postura colaborativa."
+          ],
+          "evidencias_aprendizagem": [
+            "Requisição de API funcional com tratamento de erro HTTP"
+          ],
+          "entrega_estudante": [
+            "Módulo de integração via Fetch API commitado"
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nome": "SA02",
+      "carga_horaria": 12,
+      "estrategia": "Resolução de Problemas de Segurança Web",
+      "contextualizacao": "Auditoria de código e correção de vulnerabilidades críticas em rotas de API.",
+      "qtdCapacidadesTecnicas": 2,
+      "qtdCapacidadesSocioemocionais": 1,
+      "aulas": [
+        {
+          "sa_id": "SA02",
+          "numero": 1,
+          "data": "2026-03-19",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Identificar vulnerabilidades em requisições HTTP e rotas de API"
+          ],
+          "conhecimentos": [
+            "Segurança Web (OWASP Top 10)",
+            "Inspeção de Requisições HTTP"
+          ],
+          "desafio": "Analisar e documentar brechas de segurança em endpoints de API.",
+          "resultado_esperado": "Relatório técnico de auditoria com falhas mapeadas.",
+          "estrategias_ensino": [
+            "Estudo dirigido de casos de vazamento de dados",
+            "Análise estática de código"
+          ],
+          "descricao_atividade": [
+            "Inspeção de cabeçalhos HTTP e identificação de rotas expostas."
+          ],
+          "roteiro_temporal": [
+            "00:00–01:00 — Apresentação dos riscos OWASP Top 10",
+            "01:00–03:00 — Análise prática no ambiente vulnerável",
+            "03:00–04:00 — Documentação dos pontos críticos encontrados"
+          ],
+          "instrumentos_avaliacao": [
+            "Relatório técnico de auditoria"
+          ],
+          "descricao_avaliacao": [
+            "Conferência do rigor técnico no diagnóstico de segurança."
+          ],
+          "evidencias_aprendizagem": [
+            "Documento de auditoria técnica"
+          ],
+          "entrega_estudante": [
+            "Relatorio_Auditoria.pdf no repositório"
+          ]
+        },
+        {
+          "sa_id": "SA02",
+          "numero": 2,
+          "data": "2026-03-20",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Identificar vulnerabilidades em requisições HTTP e rotas de API"
+          ],
+          "conhecimentos": [
+            "Sanitização de dados de entrada",
+            "Prevenção contra SQL Injection e XSS"
+          ],
+          "desafio": "Corrigir as vulnerabilidades identificadas sanitizando dados.",
+          "resultado_esperado": "API refatorada e protegida contra ataques XSS e SQL Injection.",
+          "estrategias_ensino": [
+            "Laboratório de segurança prática",
+            "Code review guiado pelo docente"
+          ],
+          "descricao_atividade": [
+            "Refatoração dos handlers HTTP com bibliotecas de validação e sanitização."
+          ],
+          "roteiro_temporal": [
+            "00:00–01:00 — Técnicas de sanitização e validação de payloads",
+            "01:00–03:00 — Implementação das proteções no código",
+            "03:00–04:00 — Re-teste de penetração para confirmar correção"
+          ],
+          "instrumentos_avaliacao": [
+            "Validação prática de pentest"
+          ],
+          "descricao_avaliacao": [
+            "Sucesso na rejeição de scripts maliciosos e SQL injetado."
+          ],
+          "evidencias_aprendizagem": [
+            "Código-fonte refatorado com rotas protegidas"
+          ],
+          "entrega_estudante": [
+            "Patch de correção de segurança aplicado"
+          ]
+        },
+        {
+          "sa_id": "SA02",
+          "numero": 3,
+          "data": "2026-03-21",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Identificar vulnerabilidades em requisições HTTP e rotas de API"
+          ],
+          "capacidades_socioemocionais": [
+            "Trabalhar em equipe com comunicação assertiva e proatividade"
+          ],
+          "conhecimentos": [
+            "Autenticação e Autorização baseada em tokens JWT"
+          ],
+          "desafio": "Implementar controle de acesso baseado em papéis nas rotas administrativas.",
+          "resultado_esperado": "Middleware de autenticação validando acesso às rotas.",
+          "estrategias_ensino": [
+            "Trabalho em grupo com divisão de responsabilidades",
+            "Simulação de ambiente de produção"
+          ],
+          "descricao_atividade": [
+            "Criação de middlewares HTTP em JavaScript para validação de JWT."
+          ],
+          "roteiro_temporal": [
+            "00:00–01:00 — Arquitetura de segurança com JWT",
+            "01:00–03:00 — Codificação do middleware",
+            "03:00–04:00 — Apresentação da solução em equipe"
+          ],
+          "instrumentos_avaliacao": [
+            "Demonstração técnica em grupo"
+          ],
+          "descricao_avaliacao": [
+            "Validação do fluxo completo de autenticação e papel de usuário."
+          ],
+          "evidencias_aprendizagem": [
+            "Middleware de autenticação JWT operacional"
+          ],
+          "entrega_estudante": [
+            "Módulo de autenticação commitado"
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nome": "SA03",
+      "carga_horaria": 12,
+      "estrategia": "Projeto Integrador de Banco de Dados",
+      "contextualizacao": "Criação e integração da camada de persistência de dados relacional.",
+      "qtdCapacidadesTecnicas": 2,
+      "qtdCapacidadesSocioemocionais": 1,
+      "aulas": [
+        {
+          "sa_id": "SA03",
+          "numero": 1,
+          "data": "2026-03-22",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Modelar banco de dados relacional e aplicar rotinas SQL"
+          ],
+          "conhecimentos": [
+            "Modelagem MER e DER",
+            "Regras de Normalização (1FN, 2FN, 3FN)"
+          ],
+          "desafio": "Criar o diagrama entidade-relacionamento da aplicação.",
+          "resultado_esperado": "Modelo DER validado e normalizado em 3FN.",
+          "estrategias_ensino": [
+            "Modelagem de dados em bancada",
+            "Feedback interativo"
+          ],
+          "descricao_atividade": [
+            "Desenvolvimento do DER identificando entidades, atributos e relacionamentos."
+          ],
+          "roteiro_temporal": [
+            "00:00–01:00 — Revisão das regras de normalização de dados",
+            "01:00–03:00 — Criação do modelo DER",
+            "03:00–04:00 — Apresentação do modelo para validação docente"
+          ],
+          "instrumentos_avaliacao": [
+            "Análise do diagrama conceitual"
+          ],
+          "descricao_avaliacao": [
+            "Avaliação da consistência das chaves primárias e estrangeiras."
+          ],
+          "evidencias_aprendizagem": [
+            "Diagrama DER normalizado"
+          ],
+          "entrega_estudante": [
+            "Arquivo DER.png e modelo no repositório"
+          ]
+        },
+        {
+          "sa_id": "SA03",
+          "numero": 2,
+          "data": "2026-03-23",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Modelar banco de dados relacional e aplicar rotinas SQL"
+          ],
+          "conhecimentos": [
+            "Comandos SQL (CREATE, INSERT, SELECT, JOIN)"
+          ],
+          "desafio": "Construir o banco de dados e popular tabelas com massa de dados.",
+          "resultado_esperado": "Banco de dados criado e populado por scripts SQL.",
+          "estrategias_ensino": [
+            "Laboratório prático de banco de dados",
+            "Desenvolvimento individual"
+          ],
+          "descricao_atividade": [
+            "Escrita e execução de scripts DDL para criação das tabelas e DML para população."
+          ],
+          "roteiro_temporal": [
+            "00:00–01:00 — Comandos DDL e restrições de integridade",
+            "01:00–03:00 — Escrita do script SQL",
+            "03:00–04:00 — Execução das queries de teste"
+          ],
+          "instrumentos_avaliacao": [
+            "Avaliação de script SQL"
+          ],
+          "descricao_avaliacao": [
+            "Conferência da execução sem erros de sintaxe no SGBD."
+          ],
+          "evidencias_aprendizagem": [
+            "Script schema.sql executável"
+          ],
+          "entrega_estudante": [
+            "Script .sql final no repositório"
+          ]
+        },
+        {
+          "sa_id": "SA03",
+          "numero": 3,
+          "data": "2026-03-24",
+          "carga_horaria": 4,
+          "capacidades_tecnicas": [
+            "Modelar banco de dados relacional e aplicar rotinas SQL"
+          ],
+          "capacidades_socioemocionais": [
+            "Trabalhar em equipe com comunicação assertiva e proatividade"
+          ],
+          "conhecimentos": [
+            "Driver de conexão de BD / Operações CRUD completas"
+          ],
+          "desafio": "Finalizar a integração completa entre a aplicação web e o BD.",
+          "resultado_esperado": "Aplicação realizando cadastro, leitura, edição e exclusão (CRUD).",
+          "estrategias_ensino": [
+            "Projeto de integração em equipe",
+            "Apresentação final de protótipo funcional"
+          ],
+          "descricao_atividade": [
+            "Conexão do front-end com o banco de dados através das rotas backend."
+          ],
+          "roteiro_temporal": [
+            "00:00–01:00 — Configuração das variáveis de ambiente de banco",
+            "01:00–03:00 — Testes de integração CRUD",
+            "03:00–04:00 — Apresentação da aplicação completa para a turma"
+          ],
+          "instrumentos_avaliacao": [
+            "Demonstração prática ao vivo"
+          ],
+          "descricao_avaliacao": [
+            "Avaliação do funcionamento do CRUD e proatividade na apresentação."
+          ],
+          "evidencias_aprendizagem": [
+            "Aplicação web totalmente funcional conectada ao BD"
+          ],
+          "entrega_estudante": [
+            "Link da aplicação completa no repositório"
+          ]
+        }
+      ]
+    }
+  ],
+  "padrao_desempenho": {
+    "criterios": [
+      {
+        "numero": 1,
+        "capacidade_oficial": "Identificar requisitos de software e regras de negócio para aplicações web",
+        "conhecimentos_pertinentes": [
+          "Conceitos de HTML5 e semântica web",
+          "Arquitetura Client-Server"
+        ],
+        "criterio_desempenho": "Documenta os requisitos de software conforme especificações do cliente.",
+        "sa_ids": [
+          "SA01"
+        ],
+        "peso": 15,
+        "n0": "Não identifica requisitos de software.",
+        "n1": "Identifica parcialmente os requisitos de software com auxílio.",
+        "n2": "Identifica os requisitos principais de software com pouca ajuda.",
+        "n3": "Identifica autonomamente todos os requisitos de software.",
+        "n4": "Identifica autonomamente e otimiza a documentação de requisitos de software."
+      },
+      {
+        "numero": 2,
+        "capacidade_oficial": "Estilizar interfaces digitais com CSS3 e frameworks responsivos",
+        "conhecimentos_pertinentes": [
+          "CSS3 Flexbox e Grid Layout",
+          "Design Responsivo (Media Queries)"
+        ],
+        "criterio_desempenho": "Desenvolve estilos CSS3 adaptáveis para múltiplos dispositivos.",
+        "sa_ids": [
+          "SA01"
+        ],
+        "peso": 20,
+        "n0": "Não aplica estilos CSS.",
+        "n1": "Aplica estilos CSS básicos sem suporte a dispositivos móveis.",
+        "n2": "Aplica estilos responsivos com pequenos ajustes pendentes.",
+        "n3": "Aplica estilos responsivos perfeitos em múltiplos layouts.",
+        "n4": "Aplica estilos responsivos avançados com animações e otimização CSS."
+      },
+      {
+        "numero": 3,
+        "capacidade_oficial": "Programar interatividade client-side com JavaScript moderno",
+        "conhecimentos_pertinentes": [
+          "Manipulação do DOM com JavaScript",
+          "Eventos e Validação de Formulários"
+        ],
+        "criterio_desempenho": "Implementa scripts em JavaScript para validação dinâmica de dados no navegador.",
+        "sa_ids": [
+          "SA01"
+        ],
+        "peso": 15,
+        "n0": "Não desenvolve scripts em JavaScript.",
+        "n1": "Desenvolve scripts com erros de sintaxe ou execução.",
+        "n2": "Desenvolve scripts funcionais com pequenos desvios de validação.",
+        "n3": "Desenvolve scripts robustos com tratamento de erros.",
+        "n4": "Desenvolve scripts modulares, eficientes e desacoplados em JS."
+      },
+      {
+        "numero": 4,
+        "capacidade_oficial": "Identificar vulnerabilidades em requisições HTTP e rotas de API",
+        "conhecimentos_pertinentes": [
+          "Segurança Web (OWASP Top 10)",
+          "Sanitização de dados de entrada"
+        ],
+        "criterio_desempenho": "Audita e corrige falhas de segurança em rotas e formulários web.",
+        "sa_ids": [
+          "SA02"
+        ],
+        "peso": 15,
+        "n0": "Não reconhece falhas de segurança.",
+        "n1": "Reconhece falhas com suporte constante.",
+        "n2": "Identifica falhas OWASP básicas e aplica correções simples.",
+        "n3": "Identifica autonomamente falhas críticas e sanitiza dados.",
+        "n4": "Realiza auditoria completa e implementa políticas de segurança avançadas."
+      },
+      {
+        "numero": 5,
+        "capacidade_oficial": "Modelar banco de dados relacional e aplicar rotinas SQL",
+        "conhecimentos_pertinentes": [
+          "Modelagem MER e DER",
+          "Comandos SQL (DDL e DML)"
+        ],
+        "criterio_desempenho": "Cria diagramas DER e executa scripts SQL para persistência de dados.",
+        "sa_ids": [
+          "SA03"
+        ],
+        "peso": 20,
+        "n0": "Não elabora modelagem de banco de dados.",
+        "n1": "Elabora modelagem com inconsistências nas chaves.",
+        "n2": "Elabora modelagem correta e scripts SQL básicos.",
+        "n3": "Elabora modelagem normalizada (3FN) e rotinas SQL completas.",
+        "n4": "Elabora modelagem otimizada, transações e índices SQL."
+      },
+      {
+        "numero": 6,
+        "capacidade_oficial": "Trabalhar em equipe com comunicação assertiva e proatividade",
+        "conhecimentos_pertinentes": [
+          "Metodologias Ágeis (Scrum/Kanban)",
+          "Comunicação Interpessoal"
+        ],
+        "criterio_desempenho": "Demonstra postura colaborativa e cumpre entregas nos prazos estipulados.",
+        "sa_ids": [
+          "SA01",
+          "SA02",
+          "SA03"
+        ],
+        "peso": 15,
+        "n0": "Não colabora com a equipe.",
+        "n1": "Colabora apenas quando solicitado.",
+        "n2": "Participa ativamente das rotinas da equipe.",
+        "n3": "Demonstra proatividade e liderança nas entregas.",
+        "n4": "Atua como facilitador, apoiando membros e superando metas."
+      }
+    ]
+  }
+}

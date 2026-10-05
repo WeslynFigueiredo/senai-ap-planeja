@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Temporary and scratch files
+tmp/
+scratch/
+*.log
+
+# Local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Operating System & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
