@@ -1,10 +1,10 @@
-import { loadZipPackage, saveZipPackage, readZipFileText, writeZipFileText } from './zip-package.ts';
-import { getWorksheetPathByName, setActiveSheet, enableWorkbookRecalculation } from './workbook-map.ts';
-import { setCellText, setCellNumber, setFormulaCellCachedValue } from './cell-writer.ts';
-import { PLANO_DE_ENSINO_CELL_MAP, SA_CELL_MAP, formatSaStrategy } from './institutional-map.ts';
-import { adjustSaSheets } from './sa-manager.ts';
-import { populateSaLessons, type AulaData } from './lessons-writer.ts';
-import { populatePadraoDesempenho, type CriterioDesempenhoData, type PadraoDesempenhoData } from './padrao-writer.ts';
+import { loadZipPackage, saveZipPackage, readZipFileText, writeZipFileText } from './zip-package';
+import { getWorksheetPathByName, setActiveSheet, enableWorkbookRecalculation } from './workbook-map';
+import { setCellText, setCellNumber, setFormulaCellCachedValue } from './cell-writer';
+import { PLANO_DE_ENSINO_CELL_MAP, SA_CELL_MAP, formatSaStrategy } from './institutional-map';
+import { adjustSaSheets } from './sa-manager';
+import { populateSaLessons, type AulaData } from './lessons-writer';
+import { populatePadraoDesempenho, type CriterioDesempenhoData, type PadraoDesempenhoData } from './padrao-writer';
 
 export type { CriterioDesempenhoData, PadraoDesempenhoData };
 

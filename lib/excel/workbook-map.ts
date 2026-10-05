@@ -1,5 +1,5 @@
 import PizZip from 'pizzip';
-import { readZipFileText, writeZipFileText } from './zip-package.ts';
+import { readZipFileText, writeZipFileText } from './zip-package';
 
 /**
  * OpenXML Workbook Worksheet Locator and View Manager

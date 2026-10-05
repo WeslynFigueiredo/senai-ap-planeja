@@ -1,9 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { generateWorkbookWithHeaders, type PlanoGeralData, type SituacaoAprendizagemData } from '../lib/excel/openxml.ts';
-import { compareWorkbookIntegrity } from '../lib/excel/integrity-checker.ts';
-import { loadZipPackage, readZipFileText } from '../lib/excel/zip-package.ts';
-import { getWorksheetPathByName } from '../lib/excel/workbook-map.ts';
+import { generateWorkbookWithHeaders, type PlanoGeralData, type SituacaoAprendizagemData } from '../lib/excel/openxml';
+import { compareWorkbookIntegrity } from '../lib/excel/integrity-checker';
+import { loadZipPackage, readZipFileText } from '../lib/excel/zip-package';
+import { getWorksheetPathByName } from '../lib/excel/workbook-map';
 
 const TEMPLATE_PATH = path.resolve(process.cwd(), 'templates/PLANO_DE_ENSINO_MODELO.xlsm');
 

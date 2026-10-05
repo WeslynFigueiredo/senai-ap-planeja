@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import { generateWorkbookWithHeaders, type PlanoGeralData } from '../lib/excel/openxml.ts';
-import { loadZipPackage, readZipFileText } from '../lib/excel/zip-package.ts';
-import { getWorksheetPathByName } from '../lib/excel/workbook-map.ts';
-import { compareWorkbookIntegrity } from '../lib/excel/integrity-checker.ts';
+import { generateWorkbookWithHeaders, type PlanoGeralData } from '../lib/excel/openxml';
+import { loadZipPackage, readZipFileText } from '../lib/excel/zip-package';
+import { getWorksheetPathByName } from '../lib/excel/workbook-map';
+import { compareWorkbookIntegrity } from '../lib/excel/integrity-checker';
 
 const TEMPLATE_PATH = path.resolve('templates/PLANO_DE_ENSINO_MODELO.xlsm');
 const FIXTURE_PATH = path.resolve('tests/fixtures/plano-completo.json');

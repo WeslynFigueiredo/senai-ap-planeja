@@ -1,6 +1,6 @@
 import PizZip from 'pizzip';
-import { readZipFileText, writeZipFileText } from './zip-package.ts';
-import { setActiveSheet, enableWorkbookRecalculation } from './workbook-map.ts';
+import { readZipFileText, writeZipFileText } from './zip-package';
+import { setActiveSheet, enableWorkbookRecalculation } from './workbook-map';
 
 function removeZipFile(zip: PizZip, file: string): void {
   zip.remove(file);
@@ -223,8 +223,9 @@ export function adjustSaSheets(
           if (modelPrinterMatch) {
             const oldPrinterFile = `xl/printerSettings/${modelPrinterMatch[1]}`;
             const newPrinterFile = `xl/printerSettings/printerSettings${nextPrinterNum}.bin`;
-            if (zip.file(oldPrinterFile)) {
-              zip.file(newPrinterFile, zip.file(oldPrinterFile).asNodeBuffer());
+            const oldPrinterZipFile = zip.file(oldPrinterFile);
+            if (oldPrinterZipFile) {
+              zip.file(newPrinterFile, oldPrinterZipFile.asNodeBuffer());
               addedFiles.push(newPrinterFile);
             }
             relsContent = relsContent.replace(modelPrinterMatch[1], `printerSettings${nextPrinterNum}.bin`);

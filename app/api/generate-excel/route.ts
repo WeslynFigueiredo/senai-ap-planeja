@@ -58,7 +58,9 @@ export async function POST(request: Request) {
     const filename = sanitizeFilename(planoData.unidadeCurricular);
 
     // 5. Return binary XLSM stream
-    return new Response(resultBuffer, {
+    const responseBody = new Uint8Array(resultBuffer);
+
+    return new Response(responseBody, {
       status: 200,
       headers: {
         'Content-Type': 'application/vnd.ms-excel.sheet.macroEnabled.12',

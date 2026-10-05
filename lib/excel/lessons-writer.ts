@@ -1,4 +1,4 @@
-import { setCellText, setCellNumber, setFormulaCellCachedValue } from './cell-writer.ts';
+import { setCellText, setCellNumber, setFormulaCellCachedValue } from './cell-writer';
 
 export interface AulaData {
   numero: number;

@@ -1,5 +1,5 @@
 import PizZip from 'pizzip';
-import { loadZipPackage } from './zip-package.ts';
+import { loadZipPackage } from './zip-package';
 
 export interface FormulaInfo {
   sheetFile: string;
@@ -29,19 +29,21 @@ export function extractAllFormulas(zip: PizZip): FormulaInfo[] {
   const relsXml = zip.file('xl/_rels/workbook.xml.rels')?.asText() || '';
 
   const sheetMap = new Map<string, string>();
-  const sheetMatches = Array.from(wbXml.matchAll(/<sheet [^>]*name="([^"]+)"[^>]*r:id="([^"]+)"/g)).concat(
-    Array.from(wbXml.matchAll(/<sheet [^>]*r:id="([^"]+)"[^>]*name="([^"]+)"/g)).map(m => [m[0], m[2], m[1]])
-  );
 
-  for (const m of sheetMatches) {
-    const sheetName = m[1];
-    const rId = m[2];
+  const processSheetMatch = (sheetName: string, rId: string) => {
     const relMatch = relsXml.match(new RegExp(`ID="${rId}"[^>]*Target="([^"]+)"`, 'i')) ||
                      relsXml.match(new RegExp(`Target="([^"]+)"[^>]*ID="${rId}"`, 'i'));
     if (relMatch) {
       const target = relMatch[1].startsWith('xl/') ? relMatch[1] : `xl/${relMatch[1]}`;
       sheetMap.set(target, sheetName);
     }
+  };
+
+  for (const m of wbXml.matchAll(/<sheet [^>]*name="([^"]+)"[^>]*r:id="([^"]+)"/g)) {
+    processSheetMatch(m[1], m[2]);
+  }
+  for (const m of wbXml.matchAll(/<sheet [^>]*r:id="([^"]+)"[^>]*name="([^"]+)"/g)) {
+    processSheetMatch(m[2], m[1]);
   }
 
   const files = Object.keys(zip.files).filter(f => f.startsWith('xl/worksheets/') && f.endsWith('.xml'));
@@ -83,8 +85,8 @@ export function compareWorkbookIntegrity(origBuffer: Buffer, genBuffer: Buffer):
   for (const fileName of origFiles) {
     const origFile = origZip.file(fileName);
     const genFile = genZip.file(fileName);
-    if (!genFile) {
-      modifiedInternalFiles.push(`[REMOVED] ${fileName}`);
+    if (!origFile || !genFile) {
+      if (!genFile) modifiedInternalFiles.push(`[REMOVED] ${fileName}`);
       continue;
     }
     const origBytes = origFile.asNodeBuffer();

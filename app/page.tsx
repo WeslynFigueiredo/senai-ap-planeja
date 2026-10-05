@@ -360,7 +360,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <p style={{ margin: "18px 0 0", color: "#d2e5f8", fontSize: "0.95rem", lineWeight: 1.6 }}>
+              <p style={{ margin: "18px 0 0", color: "#d2e5f8", fontSize: "0.95rem", lineHeight: 1.6 }}>
                 Seu Plano de Ensino institucional está pronto para uso e o download foi iniciado automaticamente.
               </p>
 
