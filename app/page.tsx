@@ -188,17 +188,16 @@ export default function HomePage() {
       <div className="grid-overlay" />
 
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="Gerador de Excel SENAI">
+        <a className="brand" href="#top" aria-label="SENAI AP Planeja">
           <span className="brand-mark"><SparkIcon /></span>
-          <span><b>Gerador de Excel</b><small>SENAI • Plano de Ensino</small></span>
+          <span><b>SENAI AP Planeja</b><small>Do plano ao Excel institucional</small></span>
         </a>
         <div className="top-status"><span className="pulse" /> Sistema de exportação</div>
       </header>
 
       <section className="hero" id="top">
-        <div className="eyebrow"><SparkIcon /> simples, rápido e institucional</div>
-        <h1>Seu planejamento pronto.<br /><span>Agora, transforme em Excel.</span></h1>
-        <p>Envie o <strong>Arquivo do Plano de Ensino</strong> gerado pelo Mestre de Plano de Ensino. Nós conferimos os dados e preparamos o Excel institucional para você.</p>
+        <h1>Seu planejamento pronto<br /><span>para o Excel institucional.</span></h1>
+        <p>Envie o <strong>Arquivo do Plano de Ensino</strong> e gere o documento oficial.</p>
 
         <div className="journey" aria-label="Etapas do processo">
           <div className={`journey-step ${state.status !== "idle" ? "active" : ""}`}>
@@ -252,10 +251,10 @@ export default function HomePage() {
                 </span>
               </span>
               <strong>
-                {state.status === "validating" ? "Conferindo seu arquivo..." : "Arraste o arquivo do plano aqui"}
+                {state.status === "validating" ? "Conferindo seu arquivo..." : "Arraste o arquivo aqui"}
               </strong>
               <small>
-                {state.status === "validating" ? state.fileName : "ou clique para selecionar no computador"}
+                {state.status === "validating" ? state.fileName : "ou selecione no computador"}
               </small>
               {state.status !== "validating" && (
                 <span className="select-button">Selecionar arquivo <ArrowIcon /></span>
@@ -395,24 +394,13 @@ export default function HomePage() {
           <h3>Você não precisa configurar nada.</h3>
           <div className="mini-steps">
             <div><span>01</span><p><b>Finalize seu planejamento</b><small>No Mestre de Plano de Ensino.</small></p></div>
-            <div><span>02</span><p><b>Baixe o arquivo do plano</b><small>Use a opção de gerar o Excel oficial.</small></p></div>
-            <div><span>03</span><p><b>Envie o arquivo aqui</b><small>O sistema faz a conferência automaticamente.</small></p></div>
-            <div><span>04</span><p><b>Baixe o Excel</b><small>Pronto para uso institucional.</small></p></div>
-          </div>
-          <div className="tip">
-            <SparkIcon />
-            <p><b>Dica</b><br />Não é necessário abrir ou editar o arquivo baixado do Mestre de Plano de Ensino.</p>
+            <div><span>02</span><p><b>Baixe o Arquivo do Plano</b><small>Ao concluir o planejamento.</small></p></div>
+            <div><span>03</span><p><b>Gere o Excel</b><small>Envie o arquivo aqui e pronto.</small></p></div>
           </div>
         </aside>
       </section>
 
-      <section className="features">
-        <article><span>01</span><h3>Sem complicação</h3><p>Interface direta, pensada para quem só quer concluir o trabalho e baixar o arquivo correto.</p></article>
-        <article><span>02</span><h3>Conferência automática</h3><p>O sistema verifica estrutura, capacidades, carga horária e dados essenciais antes da geração.</p></article>
-        <article><span>03</span><h3>Visual institucional</h3><p>O resultado é gerado a partir do modelo oficial, mantendo estrutura e padrão do documento.</p></article>
-      </section>
-
-      <footer><span>Gerador de Excel SENAI</span><small>Ferramenta de apoio ao planejamento docente</small></footer>
+      <footer><span>SENAI AP Planeja</span><small>Ferramenta de apoio ao planejamento docente</small></footer>
     </main>
   );
 }

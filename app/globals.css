@@ -945,82 +945,11 @@ input:focus-visible {
   font-size: 0.76rem;
 }
 
-.tip {
-  margin-top: 20px;
-  display: flex;
-  gap: 12px;
-  color: #cbd5e1;
-  font-size: 0.81rem;
-  line-height: 1.55;
-  padding: 16px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(52, 211, 153, 0.04));
-  border: 1px solid var(--line);
-}
-
-.tip svg {
-  width: 19px;
-  flex: 0 0 auto;
-  color: var(--accent-2);
-}
-
-.tip p {
-  margin: 0;
-}
-
-/* Bottom Features Section */
-.features {
-  position: relative;
-  z-index: 2;
-  width: min(1200px, calc(100% - 48px));
-  margin: 24px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.features article {
-  min-height: 190px;
-  border-radius: 22px;
-  border: 1px solid var(--line);
-  background: rgba(9, 25, 43, 0.6);
-  padding: 26px;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
-}
-
-.features article:hover {
-  transform: translateY(-4px);
-  border-color: var(--line-strong);
-  background: rgba(9, 25, 43, 0.8);
-}
-
-.features article > span {
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-}
-
-.features h3 {
-  margin: 24px 0 10px;
-  font-size: 1.12rem;
-  font-weight: 700;
-}
-
-.features p {
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
-  font-size: 0.88rem;
-}
-
-/* Footer */
 footer {
   position: relative;
   z-index: 2;
   max-width: 1200px;
-  margin: 64px auto 0;
+  margin: 56px auto 0;
   padding: 28px 24px 38px;
   border-top: 1px solid var(--line);
   display: flex;

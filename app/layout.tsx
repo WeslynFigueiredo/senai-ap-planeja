@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gerador de Excel SENAI",
-  description: "Converta o Arquivo do Plano de Ensino em Excel institucional de forma simples e segura."
+  title: "SENAI AP Planeja",
+  description: "Do plano ao Excel institucional. Ferramenta de apoio ao planejamento docente."
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
