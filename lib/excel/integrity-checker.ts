@@ -1,5 +1,5 @@
 import PizZip from 'pizzip';
-import { loadZipPackage } from './zip-package';
+import { loadZipPackage } from './zip-package.ts';
 
 export interface FormulaInfo {
   sheetFile: string;

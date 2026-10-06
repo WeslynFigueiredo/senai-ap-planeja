@@ -1,0 +1,826 @@
+{
+  "schema_version": "senai-plano-ensino-1.0",
+  "gerado_por": "SENAI - Mestre de Plano de Ensino",
+  "status": {
+    "plano_aprovado": true,
+    "padrao_desempenho_aprovado": true,
+    "validacao_concluida": true
+  },
+  "identificacao": {
+    "curso": "Técnico em Programação de Jogos Digitais",
+    "carga_horaria_curso": 1200,
+    "modalidade": "Técnico Itinerário V Presencial",
+    "modulo": "MÓDULO ESPECÍFICO II",
+    "unidade_curricular": "TESTE DE JOGOS DIGITAIS",
+    "carga_horaria_uc": 60,
+    "turma": "3D",
+    "ambiente_pedagogico": "Laboratório de Informática",
+    "data_inicio": "30/09",
+    "data_fim": "21/10"
+  },
+  "dados_oficiais": {
+    "objetivo_uc": "C3-Propiciar o desenvolvimento de capacidades técnicas e socioemocionais para planejamento, execução e análise de testes em jogos digitais.",
+    "capacidades_tecnicas": [
+      "Reconhecer os elementos de um plano de testes",
+      "Desenvolver plano de testes",
+      "Definir roteiro de teste para execução, conforme recomendações técnicas",
+      "Reconhecer normas, métodos e técnicas de testes para correção de falhas de sistema",
+      "Identificar problemas de sistemas por meio de aplicação de teste;",
+      "Organizar o ambiente para o desenvolvimento das rotinas de testes",
+      "Empregar ferramenta de documentação de teste para registro do resultado obtido",
+      "Analisar documentação de teste para planejamento da rotina",
+      "Identificar tipos, função, ferramentas de teste de acordo com o sistema de jogos digitais"
+    ],
+    "capacidades_socioemocionais": [],
+    "conhecimentos": [
+      "Testes em jogos Digitais. Processo fundamental de teste. Planejamento de testes em jogos digitais. Conceitos fundamentais. Tipos de testes: Testes de Funcionalidade, Testes de Usabilidade, Testes de Confiabilidade, Testes de Desempenho, Testes de Manutenibilidade, Testes de mesa, Testes e versão alfa, Testes e versão beta, Testes e versão Candidate, Testes e versão Gold, Testes de certificação, Testes de plataforma, Testes de publicação. Técnicas de testes. Níveis de testes. Frameworks de teste em jogos digitais. Práticas de testes. Comunicação não violenta nos ambientes de trabalho."
+    ]
+  },
+  "calendario": {
+    "carga_horaria_oficial": 60,
+    "carga_horaria_planejada": 60,
+    "quantidade_encontros": 10,
+    "duracao_padrao_encontro": 6,
+    "encontros": [
+      { "numero": 1, "data": "30/09", "carga_horaria": 6 },
+      { "numero": 2, "data": "01/10", "carga_horaria": 6 },
+      { "numero": 3, "data": "02/10", "carga_horaria": 6 },
+      { "numero": 4, "data": "07/10", "carga_horaria": 6 },
+      { "numero": 5, "data": "08/10", "carga_horaria": 6 },
+      { "numero": 6, "data": "09/10", "carga_horaria": 6 },
+      { "numero": 7, "data": "14/10", "carga_horaria": 6 },
+      { "numero": 8, "data": "15/10", "carga_horaria": 6 },
+      { "numero": 9, "data": "16/10", "carga_horaria": 6 },
+      { "numero": 10, "data": "21/10", "carga_horaria": 6 }
+    ]
+  },
+  "situacoes_aprendizagem": [
+    {
+      "id": "SA01",
+      "titulo": "Organização, Produção Inicial e Preparação do Ambiente",
+      "estrategia_desafiadora_principal": "Situação Problema",
+      "contexto": "Os estudantes estão iniciando o desenvolvimento colaborativo dos projetos em equipes (jogo 2D e ambiente 3D). Para estruturar o trabalho, as equipes organizam o fluxo de tarefas no Trello, realizam a definição e o refinamento do backlog e planejam a Sprint 1. Em seguida, iniciam a produção, executam a integração inicial, concluem a Sprint e realizam a Sprint Review, preparando e organizando o ambiente pedagógico onde as rotinas e práticas de testes poderão ser futuramente aplicadas.",
+      "capacidades": [
+        "Organizar o ambiente para o desenvolvimento das rotinas de testes"
+      ],
+      "conhecimentos": [
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "produto_evidencia_principal": "Quadro no Trello configurado com o backlog refinado da Sprint 1, ambiente de desenvolvimento e trabalho organizado e entregas iniciais dos projetos integradas ao término da Sprint.",
+      "carga_horaria": 18,
+      "encontros": [1, 2, 3]
+    },
+    {
+      "id": "SA02",
+      "titulo": "Planejamento e Execução das Rotinas de Teste nos Projetos Desenvolvidos",
+      "estrategia_desafiadora_principal": "Situação Problema",
+      "contexto": "Com as primeiras funcionalidades e versões dos projetos 2D e do ambiente 3D integradas a partir da Sprint anterior, as equipes passam a introduzir progressivamente o planejamento e a execução dos testes. Os estudantes reconhecem os elementos de um plano de testes, analisam a documentação para planejar a rotina, desenvolvem o plano de testes e definem roteiros de teste para execução conforme recomendações técnicas. Em seguida, organizam o ambiente, reconhecem normas, métodos e técnicas de testes, identificam tipos, função e ferramentas de teste de acordo com o sistema de jogos digitais, aplicam os testes para identificar problemas de sistemas e empregam ferramenta de documentação de teste para registro do resultado obtido.",
+      "capacidades": [
+        "Reconhecer os elementos de um plano de testes",
+        "Desenvolver plano de testes",
+        "Definir roteiro de teste para execução, conforme recomendações técnicas",
+        "Reconhecer normas, métodos e técnicas de testes para correção de falhas de sistema",
+        "Identificar problemas de sistemas por meio de aplicação de teste;",
+        "Organizar o ambiente para o desenvolvimento das rotinas de testes",
+        "Empregar ferramenta de documentação de teste para registro do resultado obtido",
+        "Analisar documentação de teste para planejamento da rotina",
+        "Identificar tipos, função, ferramentas de teste de acordo com o sistema de jogos digitais"
+      ],
+      "conhecimentos": [
+        "Testes em jogos Digitais.",
+        "Processo fundamental de teste.",
+        "Planejamento de testes em jogos digitais.",
+        "Conceitos fundamentais.",
+        "Tipos de testes: Testes de Funcionalidade, Testes de Usabilidade, Testes de Confiabilidade, Testes de mesa, Testes e versão alfa, Testes e versão beta.",
+        "Técnicas de testes.",
+        "Níveis de testes.",
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "produto_evidencia_principal": "Plano de testes e roteiros de teste elaborados e executados para as versões desenvolvidas dos jogos, com ferramenta de documentação de teste preenchida com o registro do resultado obtido e problemas identificados.",
+      "carga_horaria": 24,
+      "encontros": [4, 5, 6, 7]
+    },
+    {
+      "id": "SA03",
+      "titulo": "Análise da Documentação, Continuidade dos Testes e Consolidação das Entregas",
+      "estrategia_desafiadora_principal": "Situação Problema",
+      "contexto": "Na continuidade do desenvolvimento e consolidação dos projetos 2D e do ambiente 3D, as equipes analisam a documentação de teste acumulada para o planejamento da rotina subsequente. Os estudantes aprofundam a identificação dos tipos, funções e ferramentas de teste de acordo com o sistema de jogos digitais, abordando os conhecimentos de testes de desempenho, testes de manutenibilidade, testes e versão Candidate, testes e versão Gold, testes de certificação, testes de plataforma, testes de publicação e frameworks de teste em jogos digitais, conforme o estágio alcançado pelos projetos. As rotinas de teste continuam sendo aplicadas para identificar problemas de sistemas, organizando o ambiente e empregando ferramenta de documentação de teste para o registro do resultado obtido até a entrega final dos projetos.",
+      "capacidades": [
+        "Reconhecer os elementos de um plano de testes",
+        "Desenvolver plano de testes",
+        "Definir roteiro de teste para execução, conforme recomendações técnicas",
+        "Reconhecer normas, métodos e técnicas de testes para correção de falhas de sistema",
+        "Identificar problemas de sistemas por meio de aplicação de teste;",
+        "Organizar o ambiente para o desenvolvimento das rotinas de testes",
+        "Empregar ferramenta de documentação de teste para registro do resultado obtido",
+        "Analisar documentação de teste para planejamento da rotina",
+        "Identificar tipos, função, ferramentas de teste de acordo com o sistema de jogos digitais"
+      ],
+      "conhecimentos": [
+        "Tipos de testes: Testes de Desempenho, Testes de Manutenibilidade, Testes e versão Candidate, Testes e versão Gold, Testes de certificação, Testes de plataforma, Testes de publicação.",
+        "Técnicas de testes.",
+        "Níveis de testes.",
+        "Frameworks de teste em jogos digitais.",
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "produto_evidencia_principal": "Documentação de teste consolidada contendo os registros dos testes aplicados aos projetos (incluindo testes de desempenho e plataforma, conforme o estágio alcançado), ferramentas de documentação atualizadas com os resultados obtidos e entrega dos projetos desenvolvidos.",
+      "carga_horaria": 18,
+      "encontros": [8, 9, 10]
+    }
+  ],
+  "aulas": [
+    {
+      "numero": 1,
+      "data": "30/09",
+      "carga_horaria": 6,
+      "sa_id": "SA01",
+      "capacidades_tecnicas": [
+        "Organizar o ambiente para o desenvolvimento das rotinas de testes"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Retomar o quadro no Trello, estruturar o planejamento da Sprint 1 e iniciar a produção dos projetos 2D e 3D organizando o ambiente de trabalho.",
+      "resultado_esperado": "Escopo dos projetos alinhado, backlog refinado com tarefas decompostas e priorizadas no Trello na coluna 'A Fazer', e ambiente de trabalho organizado para o início da produção.",
+      "estrategias_ensino": [
+        "Exposição Dialogada",
+        "Trabalho em Grupo",
+        "Atividade Prática"
+      ],
+      "descricao_atividade": "O docente retoma com a turma a dinâmica de trabalho em equipe e a importância da comunicação no ambiente profissional ao definir prioridades e responsabilidades. Em seguida, as equipes retomam o quadro do Trello já existente, realizam a revisão do escopo dos projetos (jogo 2D e ambiente 3D) e executam o refinamento do backlog, decompondo as entregas em tarefas menores com definição clara de prioridades e responsáveis. As equipes conduzem a Planning da Sprint 1, movimentam as atividades prioritárias para a coluna 'A Fazer', organizam o ambiente nos computadores e iniciam a produção técnica dos itens selecionados. O docente acompanha a mediação entre os grupos e encerra com um checkpoint de alinhamento.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "08h20", "descricao": "Abertura da aula, contextualização da rotina da Sprint e orientações sobre comunicação colaborativa em equipe (50 min)." },
+        { "inicio": "08h20", "fim": "09h10", "descricao": "Retomada do quadro no Trello e revisão do escopo dos projetos 2D e 3D em cada bancada (50 min)." },
+        { "inicio": "09h10", "fim": "10h00", "descricao": "Refinamento do backlog com decomposição de tarefas, definição de responsáveis e prioridades (50 min)." },
+        { "inicio": "10h00", "fim": "10h50", "descricao": "Condução da Planning da Sprint 1, seleção das tarefas para a coluna 'A Fazer' e organização dos diretórios nos computadores (50 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Início da produção técnica das primeiras tarefas priorizadas no ambiente de trabalho (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Checkpoint final com verificação dos itens em andamento e feedback docente (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação"
+      ],
+      "descricao_avaliacao": "Observar a capacidade de organizar o ambiente de trabalho, a clareza na decomposição e atribuição de tarefas no Trello e a postura comunicativa entre os integrantes da equipe durante a Planning.",
+      "evidencias_aprendizagem": [
+        "Ambiente de trabalho organizado e quadro no Trello atualizado com as tarefas da Sprint 1 distribuídas e priorizadas na coluna 'A Fazer'."
+      ],
+      "entrega_estudante": "Quadro no Trello atualizado com a Sprint 1 planejada e estrutura de arquivos dos projetos organizada no computador da equipe.",
+      "recursos_ferramentas_sugeridos": [
+        "Computadores do laboratório de informática",
+        "Trello",
+        "Ferramentas de desenvolvimento dos projetos (2D e 3D)"
+      ]
+    },
+    {
+      "numero": 2,
+      "data": "01/10",
+      "carga_horaria": 6,
+      "sa_id": "SA01",
+      "capacidades_tecnicas": [
+        "Organizar o ambiente para o desenvolvimento das rotinas de testes"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Dar continuidade à produção das tarefas selecionadas na Sprint 1, realizando a integração progressiva dos componentes produzidos e a resolução de impedimentos técnicos.",
+      "resultado_esperado": "Tarefas da Sprint 1 desenvolvidas e integradas progressivamente nos computadores de trabalho, com impedimentos mapeados e quadro no Trello atualizado.",
+      "estrategias_ensino": [
+        "Trabalho em Grupo",
+        "Atividade Prática"
+      ],
+      "descricao_atividade": "O encontro inicia-se com a retomada rápida das atividades da Sprint 1 e alinhamento das metas produtivas do dia entre os integrantes da equipe. Os estudantes trabalham na execução contínua das tarefas que escolheram para a Sprint 1 nos projetos 2D e 3D, mantendo o ambiente de trabalho estruturado. Conforme concluem partes das rotinas, realizam a integração progressiva dos componentes produzidos nos arquivos centrais do projeto. Durante a atividade prática, identificam impedimentos técnicos ou divergências e praticam a comunicação clara para superá-los. As equipes atualizam o status dos cartões no Trello, enquanto o docente realiza acompanhamento técnico contínuo nas bancadas até o checkpoint final.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "08h20", "descricao": "Retomada da Sprint 1, breve alinhamento de tarefas diárias em equipe e verificação do ambiente (50 min)." },
+        { "inicio": "08h20", "fim": "09h10", "descricao": "Bloco de produção contínua das tarefas selecionadas pelas equipes para os projetos 2D e 3D (50 min)." },
+        { "inicio": "09h10", "fim": "10h00", "descricao": "Continuidade da produção técnica e mapeamento de impedimentos de execução (50 min)." },
+        { "inicio": "10h00", "fim": "10h50", "descricao": "Integração progressiva dos primeiros arquivos e componentes produzidos nos diretórios de trabalho (50 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Ajustes técnicos decorrentes da integração e atualização dos cartões no Trello (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Checkpoint final do dia com acompanhamento docente do progresso da Sprint (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação"
+      ],
+      "descricao_avaliacao": "Observar a manutenção da organização do ambiente digital de trabalho, o avanço na integração dos arquivos produzidos e o empenho da equipe na resolução dos impedimentos técnicos relatados.",
+      "evidencias_aprendizagem": [
+        "Componentes dos projetos desenvolvidos e integrados progressivamente no ambiente de trabalho e tarefas movimentadas no fluxo do Trello."
+      ],
+      "entrega_estudante": "Versão de trabalho dos projetos com as tarefas da Sprint 1 integradas no computador da equipe e quadro no Trello atualizado.",
+      "recursos_ferramentas_sugeridos": [
+        "Computadores do laboratório",
+        "Trello",
+        "Softwares e ferramentas de produção de jogos digitais"
+      ]
+    },
+    {
+      "numero": 3,
+      "data": "02/10",
+      "carga_horaria": 6,
+      "sa_id": "SA01",
+      "capacidades_tecnicas": [
+        "Organizar o ambiente para o desenvolvimento das rotinas de testes"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Concluir as tarefas prioritárias possíveis da Sprint 1, realizar a demonstração das entregas na Sprint Review, registrar as pendências no Trello e realizar o Simulado SAEP.",
+      "resultado_esperado": "Tarefas prioritárias possíveis organizadas, entregas demonstradas, Trello atualizado com as pendências e Simulado SAEP realizado.",
+      "estrategias_ensino": [
+        "Trabalho em Grupo",
+        "Atividade Prática",
+        "Simulado/Revisão"
+      ],
+      "descricao_atividade": "As equipes iniciam o encontro com a recepção, retomada da Sprint 1 e verificação das pendências no Trello. Em seguida, os estudantes dão continuidade e concluem as tarefas prioritárias possíveis da Sprint 1 com acompanhamento do docente, organizando e estruturando os arquivos das entregas dos projetos no ambiente de trabalho. Atualizam os cartões no Trello e preparam a demonstração técnica. As equipes conduzem a Sprint Review, demonstrando as entregas alcançadas e apresentando de forma colaborativa o que foi planejado, o que foi concluído e o que ficou pendente, exercitando a comunicação não violenta nos alinhamentos da equipe. O docente fornece feedback e orienta o registro formal das pendências que retornarão ao backlog ou continuarão em desenvolvimento. Na sequência, o docente realiza uma revisão breve dos conteúdos já trabalhados, esclarece dúvidas e fornece orientações para a aplicação do Simulado SAEP. Os estudantes iniciam a realização individual do Simulado SAEP, continuando sua resolução após o intervalo e concluindo a prova até o término do encontro.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "07h40", "descricao": "Recepção, retomada da Sprint 1 e revisão das pendências no Trello (10 min)." },
+        { "inicio": "07h40", "fim": "08h20", "descricao": "Continuidade e conclusão das tarefas prioritárias possíveis da Sprint 1, com acompanhamento docente (40 min)." },
+        { "inicio": "08h20", "fim": "08h50", "descricao": "Continuidade da finalização e organização dos arquivos das entregas (30 min)." },
+        { "inicio": "08h50", "fim": "09h10", "descricao": "Atualização dos cartões no Trello e preparação da demonstração (20 min)." },
+        { "inicio": "09h10", "fim": "09h40", "descricao": "Sprint Review, com demonstração das entregas e apresentação do que foi planejado, concluído e ficou pendente (30 min)." },
+        { "inicio": "09h40", "fim": "10h00", "descricao": "Feedback docente e registro das pendências que retornarão ao backlog ou continuarão em desenvolvimento (20 min)." },
+        { "inicio": "10h00", "fim": "10h20", "descricao": "Revisão breve de conteúdos já trabalhados, esclarecimento de dúvidas e orientações para realização do Simulado SAEP (20 min)." },
+        { "inicio": "10h20", "fim": "10h50", "descricao": "Início do Simulado SAEP (30 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Continuidade do Simulado SAEP (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Continuidade e conclusão do Simulado SAEP (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação",
+        "Prova Objetiva (Simulado)"
+      ],
+      "descricao_avaliacao": "Observar a organização do ambiente de trabalho durante a finalização e demonstração das entregas, a atualização das pendências no Trello e o desempenho individual na realização do Simulado SAEP.",
+      "evidencias_aprendizagem": [
+        "Entregas prioritárias demonstradas, quadro do Trello atualizado com pendências registradas e Simulado SAEP realizado."
+      ],
+      "entrega_estudante": "Arquivos das entregas organizados na pasta da equipe, quadro do Trello atualizado e folha de respostas do Simulado SAEP entregue.",
+      "recursos_ferramentas_sugeridos": [
+        "Laboratório de informática",
+        "Trello",
+        "Caderno de questões do Simulado SAEP"
+      ]
+    },
+    {
+      "numero": 4,
+      "data": "07/10",
+      "carga_horaria": 6,
+      "sa_id": "SA02",
+      "capacidades_tecnicas": [
+        "Reconhecer os elementos de um plano de testes",
+        "Desenvolver plano de testes",
+        "Analisar documentação de teste para planejamento da rotina",
+        "Identificar tipos, função, ferramentas de teste de acordo com o sistema de jogos digitais"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Testes em jogos Digitais.",
+        "Processo fundamental de teste.",
+        "Planejamento de testes em jogos digitais.",
+        "Conceitos fundamentais.",
+        "Tipos de testes: Testes de Funcionalidade, Testes de Usabilidade, Testes de Confiabilidade, Testes de mesa, Testes e versão alfa, Testes e versão beta.",
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Analisar a documentação técnica dos projetos em desenvolvimento, identificar os tipos de teste aplicáveis e elaborar o plano de testes para a rotina da Sprint 2.",
+      "resultado_esperado": "Documentação dos projetos analisada, tipos e ferramentas de testes identificados, e plano de testes estruturado contemplando os elementos formais necessários.",
+      "estrategias_ensino": [
+        "Exposição Dialogada",
+        "Trabalho em Grupo",
+        "Atividade Prática"
+      ],
+      "descricao_atividade": "O docente realiza exposição dialogada apresentando os conceitos fundamentais de testes em jogos digitais, o processo fundamental de teste e os elementos que compõem um plano de testes, abordando também as características dos tipos de testes (funcionalidade, usabilidade, confiabilidade, testes de mesa) e as noções de versão alfa e versão beta como etapas conceituais da produção. Em equipes, os estudantes analisam a documentação técnica existente dos seus projetos 2D e 3D para planejar a rotina de testes. As equipes iniciam o desenvolvimento do plano de testes, identificando as funções e ferramentas de teste apropriadas para os seus sistemas, e organizam as atividades da Sprint 2 no Trello. O docente orienta o preenchimento dos campos do documento.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "08h20", "descricao": "Exposição dialogada: processo fundamental de teste, conceitos fundamentais e elementos de um plano de testes (50 min)." },
+        { "inicio": "08h20", "fim": "09h10", "descricao": "Apresentação dos tipos de testes (funcionalidade, usabilidade, confiabilidade, mesa) e noções conceituais de versão alfa e beta (50 min)." },
+        { "inicio": "09h10", "fim": "10h00", "descricao": "Análise em equipe da documentação dos projetos 2D e 3D para direcionar o planejamento da rotina (50 min)." },
+        { "inicio": "10h00", "fim": "10h50", "descricao": "Planejamento da Sprint 2 no Trello e definição da estrutura do plano de testes em cada grupo (50 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Desenvolvimento prático do plano de testes articulando as capacidades aos elementos oficiais do projeto (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Apresentação prévia dos planos entre as bancadas, feedback do docente e checkpoint de alinhamento (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação",
+        "Relatório Técnico"
+      ],
+      "descricao_avaliacao": "Avaliar a identificação precisa dos elementos de um plano de testes, a coerência da análise documental realizada e a pertinência dos tipos de teste selecionados para os sistemas em desenvolvimento.",
+      "evidencias_aprendizagem": [
+        "Plano de testes desenvolvido contendo a identificação dos tipos e ferramentas de testes aplicáveis aos projetos das equipes."
+      ],
+      "entrega_estudante": "Documento de Plano de Testes em elaboração e quadro no Trello com o planejamento da Sprint 2 estruturado.",
+      "recursos_ferramentas_sugeridos": [
+        "Computadores do laboratório",
+        "Modelo textual de Plano de Testes",
+        "Trello"
+      ]
+    },
+    {
+      "numero": 5,
+      "data": "08/10",
+      "carga_horaria": 6,
+      "sa_id": "SA02",
+      "capacidades_tecnicas": [
+        "Definir roteiro de teste para execução, conforme recomendações técnicas",
+        "Reconhecer normas, métodos e técnicas de testes para correção de falhas de sistema",
+        "Organizar o ambiente para o desenvolvimento das rotinas de testes",
+        "Identificar problemas de sistemas por meio de aplicação de teste;",
+        "Empregar ferramenta de documentação de teste para registro do resultado obtido"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Planejamento de testes em jogos digitais.",
+        "Técnicas de testes.",
+        "Níveis de testes.",
+        "Tipos de testes: Testes de Funcionalidade, Testes de Usabilidade, Testes de mesa.",
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Definir roteiros de teste, organizar o ambiente, executar os testes nos projetos em desenvolvimento e registrar os problemas identificados na ferramenta de documentação.",
+      "resultado_esperado": "Roteiros de teste definidos e executados, ambiente de testes organizado e problemas identificados devidamente lançados na ferramenta de documentação de teste.",
+      "estrategias_ensino": [
+        "Exposição Dialogada",
+        "Trabalho em Grupo",
+        "Atividade Prática"
+      ],
+      "descricao_atividade": "O docente demonstra métodos e técnicas de testes, normas técnicas aplicáveis e orientações para estruturação de roteiros de teste. Em grupo, os estudantes definem o roteiro de teste para execução conforme as recomendações técnicas recebidas, cobrindo os componentes desenvolvidos nos projetos 2D e 3D. Em seguida, organizam o ambiente físico e digital nos computadores para viabilizar as rotinas de verificação. As equipes executam os roteiros, aplicam testes de mesa e testes de funcionalidade e, ao identificar problemas de sistemas, empregam a ferramenta de documentação de teste para realizar o registro do resultado obtido. O docente acompanha a execução prática nas bancadas.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "08h20", "descricao": "Exposição dialogada sobre normas, métodos, níveis e técnicas de testes para verificação de falhas (50 min)." },
+        { "inicio": "08h20", "fim": "09h10", "descricao": "Definição dos roteiros de teste em equipe para execução nos projetos conforme recomendações técnicas (50 min)." },
+        { "inicio": "09h10", "fim": "10h00", "descricao": "Organização do ambiente nos computadores para início da aplicação das rotinas práticas de teste (50 min)." },
+        { "inicio": "10h00", "fim": "10h50", "descricao": "Execução prática dos roteiros de teste e testes funcionais nos componentes dos projetos desenvolvidos (50 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Identificação de problemas de sistemas e emprego de ferramenta de documentação de teste para registro do resultado obtido (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Checkpoint técnico para verificação das ocorrências documentadas e alinhamento das tarefas de correção (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação",
+        "Ficha de Registro de Testes"
+      ],
+      "descricao_avaliacao": "Observar a definição correta do roteiro de teste, a organização do ambiente durante a execução prática e a fidedignidade do registro na ferramenta de documentação ao constatar problemas de sistemas.",
+      "evidencias_aprendizagem": [
+        "Roteiros de teste definidos e ferramenta de documentação de teste preenchida com o registro do resultado obtido e problemas identificados."
+      ],
+      "entrega_estudante": "Roteiro de teste definido em modelo padronizado e arquivo da ferramenta de documentação de teste com as ocorrências registradas.",
+      "recursos_ferramentas_sugeridos": [
+        "Computadores do laboratório",
+        "Ferramenta de documentação de teste (planilha/software técnico de registro)",
+        "Projetos desenvolvidos pelas equipes"
+      ]
+    },
+    {
+      "numero": 6,
+      "data": "09/10",
+      "carga_horaria": 6,
+      "sa_id": "SA02",
+      "capacidades_tecnicas": [
+        "Identificar problemas de sistemas por meio de aplicação de teste;",
+        "Reconhecer normas, métodos e técnicas de testes para correção de falhas de sistema",
+        "Empregar ferramenta de documentação de teste para registro do resultado obtido"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Tipos de testes: Testes de Funcionalidade, Testes de Confiabilidade.",
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Verificar as correções realizadas nos projetos, atualizar a ferramenta de documentação de teste, fechar a Sprint 2 e realizar o simulado SAEP de revisão.",
+      "resultado_esperado": "Problemas de sistemas corrigidos e conferidos por aplicação de teste, ferramenta de documentação atualizada com os novos resultados, Sprint 2 concluída no Trello e simulado SAEP realizado.",
+      "estrategias_ensino": [
+        "Trabalho em Grupo",
+        "Atividade Prática",
+        "Simulado/Revisão"
+      ],
+      "descricao_atividade": "As equipes aplicam técnicas de teste para verificar se as falhas corrigidas nos projetos 2D e 3D foram efetivamente solucionadas, executando novamente os roteiros pertinentes e avaliando a confiabilidade do sistema. Os estudantes atualizam a ferramenta de documentação de teste com o registro do resultado obtido após os ajustes. Realizam o fechamento da Sprint 2 no Trello, organizando os cartões de entrega. Na segunda parte do encontro, o docente conduz o momento de revisão e aplica o Simulado SAEP 02. Os estudantes resolvem as questões individualmente, seguidas de correção conjunta e esclarecimento de dúvidas conceituais sobre testes e sistemas.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "08h20", "descricao": "Execução de testes de verificação funcional nos projetos após as alterações técnicas realizadas pela equipe (50 min)." },
+        { "inicio": "08h20", "fim": "09h10", "descricao": "Identificação de eventuais problemas remanescentes e atualização do registro do resultado obtido na documentação (50 min)." },
+        { "inicio": "09h10", "fim": "10h00", "descricao": "Fechamento da Sprint 2 no Trello, movimentação de cartões concluídos e registro do status dos itens (50 min)." },
+        { "inicio": "10h00", "fim": "10h50", "descricao": "Início do bloco de revisão de conteúdos e aplicação do Simulado SAEP 02 (50 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Continuidade da resolução individual do Simulado SAEP 02 e recolha das respostas (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Correção coletiva comentada do simulado, resolução de dúvidas e orientações para a continuidade das rotinas (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação",
+        "Prova Objetiva (Simulado)"
+      ],
+      "descricao_avaliacao": "Observar a aplicação metódica dos testes de verificação, a precisão no registro da ferramenta de documentação e o aproveitamento nas questões do simulado.",
+      "evidencias_aprendizagem": [
+        "Ferramenta de documentação atualizada com a validação das correções realizadas e cartão-resposta do Simulado SAEP 02 preenchido."
+      ],
+      "entrega_estudante": "Ferramenta de documentação de teste atualizada com os novos resultados e folha de respostas do simulado entregue.",
+      "recursos_ferramentas_sugeridos": [
+        "Computadores do laboratório",
+        "Ferramenta de documentação de teste",
+        "Trello",
+        "Caderno do Simulado SAEP 02"
+      ]
+    },
+    {
+      "numero": 7,
+      "data": "14/10",
+      "carga_horaria": 6,
+      "sa_id": "SA02",
+      "capacidades_tecnicas": [
+        "Analisar documentação de teste para planejamento da rotina",
+        "Identificar tipos, função, ferramentas de teste de acordo com o sistema de jogos digitais",
+        "Identificar problemas de sistemas por meio de aplicação de teste;",
+        "Empregar ferramenta de documentação de teste para registro do resultado obtido"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Tipos de testes: Testes de Usabilidade, Testes e versão beta.",
+        "Técnicas de testes.",
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Analisar a documentação existente para planejar a rotina de testes de usabilidade, aplicar os testes entre as equipes nos projetos desenvolvidos e documentar os resultados para concluir a SA02.",
+      "resultado_esperado": "Rotina de testes de usabilidade planejada e aplicada de forma cruzada entre equipes, problemas identificados registrados na documentação e fechamento da SA02.",
+      "estrategias_ensino": [
+        "Trabalho em Grupo",
+        "Atividade Prática"
+      ],
+      "descricao_atividade": "O docente aborda as práticas de testes de usabilidade e os conceitos relativos a testes em versão beta como etapa formativa do ciclo de desenvolvimento, destacando a comunicação respeitosa ao reportar observações a outros grupos. Os estudantes analisam a documentação de teste para planejamento da rotina e preparam a aplicação dos testes nos projetos desenvolvidos. As equipes realizam uma dinâmica cruzada: uma equipe testa o projeto da outra, aplicando testes de usabilidade e identificando problemas de sistemas relacionados à interface e à interação do usuário. Todos os resultados são anotados com o emprego da ferramenta de documentação de teste. Ao final, os grupos compartilham as anotações, encerrando a SA02.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "08h20", "descricao": "Orientações docentes sobre planejamento de testes de usabilidade, conceitos de versão beta e diálogo construtivo entre equipes (50 min)." },
+        { "inicio": "08h20", "fim": "09h10", "descricao": "Análise da documentação de teste para estruturar o planejamento da rotina de teste de usabilidade (50 min)." },
+        { "inicio": "09h10", "fim": "10h00", "descricao": "Início da aplicação prática de testes de usabilidade cruzados entre as equipes nos projetos 2D e 3D (50 min)." },
+        { "inicio": "10h00", "fim": "10h50", "descricao": "Continuidade dos testes de usabilidade e identificação de problemas de sistemas durante a navegação (50 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Emprego da ferramenta de documentação de teste para registro detalhado do resultado obtido nos projetos testados (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Partilha dos relatórios entre os grupos, encerramento da SA02 e alinhamento do Trello para a SA03 (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação",
+        "Relatório Técnico"
+      ],
+      "descricao_avaliacao": "Observar a capacidade de analisar a documentação para planejar a rotina de usabilidade, a conduta na identificação de problemas de sistemas e a qualidade do registro na ferramenta de documentação.",
+      "evidencias_aprendizagem": [
+        "Documentação de teste preenchida com o registro do resultado obtido e problemas identificados nos testes de usabilidade."
+      ],
+      "entrega_estudante": "Arquivo da ferramenta de documentação com o registro dos testes de usabilidade realizados e recebidos pela equipe.",
+      "recursos_ferramentas_sugeridos": [
+        "Computadores do laboratório",
+        "Ferramenta de documentação de teste",
+        "Projetos desenvolvidos pelas equipes"
+      ]
+    },
+    {
+      "numero": 8,
+      "data": "15/10",
+      "carga_horaria": 6,
+      "sa_id": "SA03",
+      "capacidades_tecnicas": [
+        "Analisar documentação de teste para planejamento da rotina",
+        "Identificar tipos, função, ferramentas de teste de acordo com o sistema de jogos digitais",
+        "Reconhecer normas, métodos e técnicas de testes para correção de falhas de sistema",
+        "Reconhecer os elementos de um plano de testes"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Tipos de testes: Testes de Desempenho, Testes de Manutenibilidade, Testes e versão Candidate, Testes e versão Gold, Testes de certificação, Testes de plataforma, Testes de publicação.",
+        "Frameworks de teste em jogos digitais.",
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Analisar toda a documentação de testes acumulada e identificar a aplicação de testes de desempenho, manutenibilidade e plataforma de acordo com o estágio alcançado pelos projetos.",
+      "resultado_esperado": "Diagnóstico da documentação de teste realizado, conhecimentos sobre testes de desempenho e plataforma identificados e rotina técnica planejada no Trello.",
+      "estrategias_ensino": [
+        "Exposição Dialogada",
+        "Trabalho em Grupo",
+        "Atividade Prática"
+      ],
+      "descricao_atividade": "O docente explora o papel dos testes de desempenho, testes de manutenibilidade, testes de plataforma, testes de publicação e testes de certificação, contextualizando como estes conhecimentos se relacionam com as versões Candidate e Gold da indústria, além de exemplificar frameworks de teste em jogos digitais. Em grupo, os estudantes analisam a documentação de teste preexistente para direcionar o planejamento da rotina técnica seguinte. As equipes identificam a função e as ferramentas de teste aplicáveis aos projetos 2D e 3D de acordo com as características do sistema, reconhecendo as normas e técnicas necessárias para mitigar falhas nos componentes finais. No Trello, estruturam o backlog da Sprint final.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "08h20", "descricao": "Exposição dialogada: testes de desempenho, manutenibilidade, plataforma, publicação e frameworks de teste (50 min)." },
+        { "inicio": "08h20", "fim": "09h10", "descricao": "Abordagem conceitual de testes de certificação e versão Candidate e versão Gold no ciclo de jogos (50 min)." },
+        { "inicio": "09h10", "fim": "10h00", "descricao": "Análise da documentação de teste acumulada para o planejamento da rotina técnica final nos projetos (50 min)." },
+        { "inicio": "10h00", "fim": "10h50", "descricao": "Identificação dos tipos de testes, funções e ferramentas pertinentes ao sistema do jogo 2D e ambiente 3D (50 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Estruturação dos passos de verificação de desempenho e plataforma a serem aplicados nos projetos (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Planejamento das tarefas da Sprint final no Trello e checkpoint de fechamento do encontro (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação",
+        "Ficha de Análise Documental"
+      ],
+      "descricao_avaliacao": "Avaliar a análise crítica da documentação de teste para estruturação da rotina e a identificação adequada dos tipos e funções de testes de desempenho e plataforma para o sistema em questão.",
+      "evidencias_aprendizagem": [
+        "Análise da documentação realizada e roteiro de verificação de desempenho e plataforma estruturado para os projetos."
+      ],
+      "entrega_estudante": "Roteiro técnico contendo as rotinas de verificação de desempenho e plataforma planejadas e quadro no Trello atualizado.",
+      "recursos_ferramentas_sugeridos": [
+        "Computadores do laboratório",
+        "Ferramenta de documentação de teste",
+        "Trello"
+      ]
+    },
+    {
+      "numero": 9,
+      "data": "16/10",
+      "carga_horaria": 6,
+      "sa_id": "SA03",
+      "capacidades_tecnicas": [
+        "Identificar problemas de sistemas por meio de aplicação de teste;",
+        "Organizar o ambiente para o desenvolvimento das rotinas de testes",
+        "Empregar ferramenta de documentação de teste para registro do resultado obtido",
+        "Reconhecer normas, métodos e técnicas de testes para correção de falhas de sistema"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Tipos de testes: Testes de Desempenho, Testes de Manutenibilidade, Testes de plataforma, Testes de publicação.",
+        "Técnicas de testes.",
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Executar os testes de desempenho e de plataforma nos projetos, documentar os resultados obtidos e realizar o simulado SAEP geral de fechamento da UC.",
+      "resultado_esperado": "Rotinas de testes executadas no ambiente preparado, resultados e problemas registrados na ferramenta de documentação, e simulado SAEP geral realizado.",
+      "estrategias_ensino": [
+        "Trabalho em Grupo",
+        "Atividade Prática",
+        "Simulado/Revisão Geral"
+      ],
+      "descricao_atividade": "Os estudantes organizam o ambiente de trabalho e aplicam testes de desempenho e de plataforma nos projetos 2D e 3D, identificando eventuais problemas de sistemas e falhas de funcionamento. Empregam a ferramenta de documentação de teste para efetuar o registro completo do resultado obtido, reunindo as informações técnicas necessárias para os ajustes finais. Na segunda parte da aula, o docente conduz o encerramento do ciclo de revisão e aplica o Simulado SAEP Geral, abrangendo as capacidades e conhecimentos fundamentais desenvolvidos ao longo de toda a Unidade Curricular. Realiza-se a correção comentada com a turma.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "08h20", "descricao": "Organização do ambiente nos computadores e preparação dos projetos para aplicação das rotinas finais de teste (50 min)." },
+        { "inicio": "08h20", "fim": "09h10", "descricao": "Execução prática de testes de desempenho e de plataforma nos sistemas dos projetos 2D e 3D (50 min)." },
+        { "inicio": "09h10", "fim": "10h00", "descricao": "Identificação de problemas de sistemas e emprego da ferramenta de documentação para registro do resultado obtido (50 min)." },
+        { "inicio": "10h00", "fim": "10h50", "descricao": "Início do bloco de revisão geral da UC e aplicação do Simulado SAEP Geral (50 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Continuidade da resolução individual do Simulado SAEP Geral e recolha das avaliações (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Correção coletiva comentada do simulado geral, alinhamento das entregas finais da turma e fechamento (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação",
+        "Prova Objetiva (Simulado Geral)"
+      ],
+      "descricao_avaliacao": "Observar a organização do ambiente durante a execução dos testes, a precisão no registro do resultado obtido na ferramenta de documentação e o desempenho individual no Simulado SAEP Geral.",
+      "evidencias_aprendizagem": [
+        "Ferramenta de documentação de teste atualizada com os resultados das rotinas de desempenho e plataforma e cartão-resposta do Simulado SAEP Geral preenchido."
+      ],
+      "entrega_estudante": "Registro técnico dos resultados obtidos na documentação e folha de respostas do simulado entregue.",
+      "recursos_ferramentas_sugeridos": [
+        "Computadores do laboratório",
+        "Ferramenta de documentação de teste",
+        "Caderno do Simulado SAEP Geral"
+      ]
+    },
+    {
+      "numero": 10,
+      "data": "21/10",
+      "carga_horaria": 6,
+      "sa_id": "SA03",
+      "capacidades_tecnicas": [
+        "Reconhecer os elementos de um plano de testes",
+        "Desenvolver plano de testes",
+        "Definir roteiro de teste para execução, conforme recomendações técnicas",
+        "Reconhecer normas, métodos e técnicas de testes para correção de falhas de sistema",
+        "Identificar problemas de sistemas por meio de aplicação de teste;",
+        "Organizar o ambiente para o desenvolvimento das rotinas de testes",
+        "Empregar ferramenta de documentação de teste para registro do resultado obtido",
+        "Analisar documentação de teste para planejamento da rotina",
+        "Identificar tipos, função, ferramentas de teste de acordo com o sistema de jogos digitais"
+      ],
+      "capacidades_socioemocionais": [],
+      "conhecimentos": [
+        "Testes em jogos Digitais.",
+        "Processo fundamental de teste.",
+        "Planejamento de testes em jogos digitais.",
+        "Práticas de testes.",
+        "Comunicação não violenta nos ambientes de trabalho."
+      ],
+      "desafio": "Consolidar a documentação de testes produzida ao longo da Unidade Curricular, apresentar os resultados obtidos nas rotinas aplicadas e concluir as entregas dos projetos.",
+      "resultado_esperado": "Pacote consolidado contendo plano de testes, roteiros de teste, ferramenta de documentação com os resultados obtidos e projetos desenvolvidos devidamente organizados e demonstrados.",
+      "estrategias_ensino": [
+        "Trabalho em Grupo",
+        "Seminário/Apresentação Técnica"
+      ],
+      "descricao_atividade": "Os estudantes realizam a organização e consolidação de todo o acervo técnico produzido durante as rotinas de teste da UC: quadro no Trello concluído, plano de testes desenvolvido, roteiros de teste definidos conforme recomendações técnicas, e a ferramenta de documentação de teste preenchida com o histórico dos resultados obtidos e problemas identificados nos projetos 2D e 3D desenvolvidos. As equipes realizam uma apresentação técnica sucinta, demonstrando como a aplicação das rotinas e métodos de testes contribuiu para identificar problemas e guiar o desenvolvimento dos projetos. O docente conduz a síntese final da Unidade Curricular e apresenta os feedbacks sobre as capacidades consolidadas.",
+      "roteiro_temporal": [
+        { "inicio": "07h30", "fim": "08h20", "descricao": "Organização final dos arquivos, conferência da documentação de testes e do quadro no Trello (50 min)." },
+        { "inicio": "08h20", "fim": "09h10", "descricao": "Bloco 1 de apresentações técnicas das equipes: demonstração dos projetos e dos roteiros/planos executados (50 min)." },
+        { "inicio": "09h10", "fim": "10h00", "descricao": "Bloco 2 de apresentações técnicas das equipes e exposição da documentação com o registro dos resultados obtidos (50 min)." },
+        { "inicio": "10h00", "fim": "10h50", "descricao": "Conclusão das demonstrações práticas e arquivo dos materiais no repositório da turma (50 min)." },
+        { "inicio": "10h50", "fim": "11h20", "descricao": "Intervalo pedagógico (30 min)." },
+        { "inicio": "11h20", "fim": "12h10", "descricao": "Devolutiva pedagógica do docente com avaliação das capacidades técnicas trabalhadas na UC (50 min)." },
+        { "inicio": "12h10", "fim": "12h50", "descricao": "Fechamento oficial da Unidade Curricular TESTE DE JOGOS DIGITAIS e encerramento dos registros (40 min)." }
+      ],
+      "instrumentos_avaliacao": [
+        "Ficha de Observação",
+        "Ficha de Avaliação de Documentação/Projeto"
+      ],
+      "descricao_avaliacao": "Avaliar a completude, coerência e fidelidade técnica da documentação de teste consolidada (plano, roteiros e ferramenta de registro) em consonância com as capacidades oficiais desenvolvidas durante as aulas.",
+      "evidencias_aprendizagem": [
+        "Documentação de teste consolidada (Plano de testes, Roteiros de teste, Ferramenta de documentação preenchida com resultados) e produtos desenvolvidos organizados."
+      ],
+      "entrega_estudante": "Pasta consolidada da equipe contendo o Plano de Testes, os Roteiros de Teste executados, a Ferramenta de Documentação preenchida com o registro do resultado obtido e o link do Trello finalizado.",
+      "recursos_ferramentas_sugeridos": [
+        "Computadores do laboratório",
+        "Projetor multimídia",
+        "Ferramenta de documentação de teste",
+        "Trello"
+      ]
+    }
+  ],
+  "auditoria": {
+    "capacidades_oficiais": 9,
+    "capacidades_trabalhadas": 9,
+    "capacidades_com_evidencia": 9,
+    "capacidades_avaliadas": 9,
+    "capacidades_no_padrao": 9,
+    "capacidades_socioemocionais_oficiais": 0,
+    "capacidades_socioemocionais_trabalhadas": 0,
+    "conhecimentos_inventados": 0,
+    "capacidades_inventadas": 0,
+    "carga_horaria_oficial": 60,
+    "carga_horaria_planejada": 60,
+    "peso_total_padrao": 100,
+    "coerencia_bloom_validada": true
+  },
+  "padrao_desempenho": {
+    "peso_total": 100,
+    "criterios": [
+      {
+        "numero": 1,
+        "tipo": "Técnica",
+        "capacidade_oficial": "Reconhecer os elementos de um plano de testes",
+        "conhecimentos_pertinentes": [
+          "Planejamento de testes em jogos digitais.",
+          "Conceitos fundamentais."
+        ],
+        "criterio_desempenho": "Reconhece os elementos de um plano de testes.",
+        "sa_ids": ["SA02", "SA03"],
+        "aulas_relacionadas": [4, 8, 10],
+        "evidencia_relacionada": "Seções do plano de testes identificadas com os elementos do documento.",
+        "peso": 10,
+        "n0": "Não reconhece os elementos de um plano de testes.",
+        "n1": "Reconhece parte dos elementos de um plano de testes, necessitando de mediação constante para apontá-los.",
+        "n2": "Reconhece os elementos essenciais de um plano de testes, apresentando hesitações ou omissões pontuais.",
+        "n3": "Reconhece os elementos de um plano de testes de acordo com as instruções recebidas.",
+        "n4": "Reconhece com clareza, consistência e autonomia os elementos de um plano de testes."
+      },
+      {
+        "numero": 2,
+        "tipo": "Técnica",
+        "capacidade_oficial": "Desenvolver plano de testes",
+        "conhecimentos_pertinentes": [
+          "Planejamento de testes em jogos digitais.",
+          "Conceitos fundamentais.",
+          "Práticas de testes."
+        ],
+        "criterio_desempenho": "Desenvolve plano de testes.",
+        "sa_ids": ["SA02", "SA03"],
+        "aulas_relacionadas": [4, 10],
+        "evidencia_relacionada": "Plano de testes desenvolvido para os projetos.",
+        "peso": 15,
+        "n0": "Não desenvolve o plano de testes.",
+        "n1": "Desenvolve o plano de testes de forma incompleta, dependendo de acompanhamento docente para preencher a estrutura básica.",
+        "n2": "Desenvolve o plano de testes com a maior parte dos itens preenchida, mantendo inconsistências pontuais.",
+        "n3": "Desenvolve o plano de testes de maneira organizada e alinhada às versões dos projetos.",
+        "n4": "Desenvolve o plano de testes com detalhamento, consistência técnica e autonomia."
+      },
+      {
+        "numero": 3,
+        "tipo": "Técnica",
+        "capacidade_oficial": "Definir roteiro de teste para execução, conforme recomendações técnicas",
+        "conhecimentos_pertinentes": [
+          "Processo fundamental de teste.",
+          "Técnicas de testes.",
+          "Níveis de testes."
+        ],
+        "criterio_desempenho": "Define roteiro de teste para execução, conforme recomendações técnicas.",
+        "sa_ids": ["SA02", "SA03"],
+        "aulas_relacionadas": [5, 10],
+        "evidencia_relacionada": "Roteiros de teste definidos para os componentes dos projetos.",
+        "peso": 15,
+        "n0": "Não define o roteiro de teste para execução.",
+        "n1": "Define o roteiro de teste de forma fragmentada, com desvios em relação às recomendações técnicas e demanda contínua de mediação.",
+        "n2": "Define o roteiro de teste com os passos fundamentais, apresentando imprecisões nas recomendações técnicas.",
+        "n3": "Define o roteiro de teste para execução atendendo às recomendações técnicas.",
+        "n4": "Define o roteiro de teste para execução com clareza sequencial, regularidade e autonomia, conforme recomendações técnicas."
+      },
+      {
+        "numero": 4,
+        "tipo": "Técnica",
+        "capacidade_oficial": "Reconhecer normas, métodos e técnicas de testes para correção de falhas de sistema",
+        "conhecimentos_pertinentes": [
+          "Processo fundamental de teste.",
+          "Técnicas de testes.",
+          "Práticas de testes."
+        ],
+        "criterio_desempenho": "Reconhece normas, métodos e técnicas de testes para correção de falhas de sistema.",
+        "sa_ids": ["SA02", "SA03"],
+        "aulas_relacionadas": [5, 6, 8],
+        "evidencia_relacionada": "Apontamento e discriminação de normas, métodos e técnicas de testes nos registros e atividades.",
+        "peso": 10,
+        "n0": "Não reconhece normas, métodos e técnicas de testes para correção de falhas de sistema.",
+        "n1": "Reconhece poucas normas, métodos ou técnicas de testes, demonstrando indefinição conceitual e demandando apoio direto.",
+        "n2": "Reconhece parte significativa das normas, métodos e técnicas de testes, necessitando de mediação para diferenciá-los.",
+        "n3": "Reconhece normas, métodos e técnicas de testes voltados para a correção de falhas de sistema conforme apresentado.",
+        "n4": "Reconhece com segurança, consistência e autonomia normas, métodos e técnicas de testes para correção de falhas de sistema."
+      },
+      {
+        "numero": 5,
+        "tipo": "Técnica",
+        "capacidade_oficial": "Identificar problemas de sistemas por meio de aplicação de teste;",
+        "conhecimentos_pertinentes": [
+          "Processo fundamental de teste.",
+          "Práticas de testes.",
+          "Tipos de testes: Testes de Funcionalidade, Testes de Usabilidade, Testes de Confiabilidade, Testes de Desempenho, Testes de Manutenibilidade, Testes de mesa, Testes de plataforma, Testes de publicação."
+        ],
+        "criterio_desempenho": "Identifica problemas de sistemas por meio de aplicação de teste.",
+        "sa_ids": ["SA02", "SA03"],
+        "aulas_relacionadas": [5, 6, 7, 9, 10],
+        "evidencia_relacionada": "Problemas de sistemas identificados e anotados durante os testes aplicados.",
+        "peso": 10,
+        "n0": "Não identifica problemas de sistemas ou não aplica os testes.",
+        "n1": "Identifica problemas pontuais apenas com indicação direta do docente durante a aplicação de teste.",
+        "n2": "Identifica os principais problemas de sistemas decorrentes da aplicação de teste, omitindo ocorrências evidentes.",
+        "n3": "Identifica problemas de sistemas por meio de aplicação de teste de maneira correta.",
+        "n4": "Identifica problemas de sistemas por meio de aplicação de teste com clareza, exatidão e autonomia."
+      },
+      {
+        "numero": 6,
+        "tipo": "Técnica",
+        "capacidade_oficial": "Organizar o ambiente para o desenvolvimento das rotinas de testes",
+        "conhecimentos_pertinentes": [
+          "Práticas de testes."
+        ],
+        "criterio_desempenho": "Organiza o ambiente para o desenvolvimento das rotinas de testes.",
+        "sa_ids": ["SA01", "SA02", "SA03"],
+        "aulas_relacionadas": [1, 2, 3, 5, 9, 10],
+        "evidencia_relacionada": "Ambiente e arquivos estruturados para o desenvolvimento das rotinas de testes.",
+        "peso": 10,
+        "n0": "Não organiza o ambiente para o desenvolvimento das rotinas de testes.",
+        "n1": "Organiza o ambiente de forma desestruturada, exigindo auxílio docente frequente para disponibilizar recursos e arquivos básicos.",
+        "n2": "Organiza o ambiente de testes de modo satisfatório, mantendo pequenos desarranjos na disposição dos arquivos ou itens.",
+        "n3": "Organiza o ambiente de modo ordenado e funcional para o desenvolvimento das rotinas de testes.",
+        "n4": "Organiza o ambiente com presteza, estabilidade e autonomia para o desenvolvimento das rotinas de testes."
+      },
+      {
+        "numero": 7,
+        "tipo": "Técnica",
+        "capacidade_oficial": "Empregar ferramenta de documentação de teste para registro do resultado obtido",
+        "conhecimentos_pertinentes": [
+          "Processo fundamental de teste.",
+          "Práticas de testes."
+        ],
+        "criterio_desempenho": "Emprega ferramenta de documentação de teste para registro do resultado obtido.",
+        "sa_ids": ["SA02", "SA03"],
+        "aulas_relacionadas": [5, 6, 7, 9, 10],
+        "evidencia_relacionada": "Ferramenta de documentação de teste com os dados e resultados dos testes anotados.",
+        "peso": 10,
+        "n0": "Não emprega a ferramenta de documentação de teste ou deixa os registros em branco.",
+        "n1": "Emprega a ferramenta de documentação de teste com anotações dispersas e incompletas, exigindo mediação docente.",
+        "n2": "Emprega a ferramenta de documentação de teste realizando a maior parte dos registros, mas com falhas pontuais de anotação.",
+        "n3": "Emprega a ferramenta de documentação de teste registrando o resultado obtido de forma clara e padronizada.",
+        "n4": "Emprega a ferramenta de documentação de teste para registro do resultado obtido com consistência, completude e autonomia."
+      },
+      {
+        "numero": 8,
+        "tipo": "Técnica",
+        "capacidade_oficial": "Analisar documentação de teste para planejamento da rotina",
+        "conhecimentos_pertinentes": [
+          "Planejamento de testes em jogos digitais.",
+          "Práticas de testes."
+        ],
+        "criterio_desempenho": "Analisa documentação de teste para planejamento da rotina.",
+        "sa_ids": ["SA02", "SA03"],
+        "aulas_relacionadas": [4, 7, 8, 10],
+        "evidencia_relacionada": "Planejamento das tarefas e prioridades embasado na documentação de teste.",
+        "peso": 10,
+        "n0": "Não analisa a documentação de teste para planejamento da rotina.",
+        "n1": "Analisa de forma superficial a documentação de teste, necessitando de intervenção do docente para planejar a rotina.",
+        "n2": "Analisa a documentação de teste identificando aspectos principais, demonstrando hesitações na organização da rotina.",
+        "n3": "Analisa a documentação de teste estabelecendo o planejamento da rotina conforme os dados levantados.",
+        "n4": "Analisa a documentação de teste para planejamento da rotina com acuidade, consistência e autonomia."
+      },
+      {
+        "numero": 9,
+        "tipo": "Técnica",
+        "capacidade_oficial": "Identificar tipos, função, ferramentas de teste de acordo com o sistema de jogos digitais",
+        "conhecimentos_pertinentes": [
+          "Tipos de testes: Testes de Funcionalidade, Testes de Usabilidade, Testes de Confiabilidade, Testes de Desempenho, Testes de Manutenibilidade, Testes de mesa, Testes e versão alfa, Testes e versão beta, Testes e versão Candidate, Testes e versão Gold, Testes de certificação, Testes de plataforma, Testes de publicação.",
+          "Frameworks de teste em jogos digitais."
+        ],
+        "criterio_desempenho": "Identifica tipos, função e ferramentas de teste de acordo com o sistema de jogos digitais.",
+        "sa_ids": ["SA02", "SA03"],
+        "aulas_relacionadas": [4, 8, 10],
+        "evidencia_relacionada": "Mapeamento técnico com a indicação dos tipos, funções e ferramentas de teste de acordo com os projetos.",
+        "peso": 10,
+        "n0": "Não identifica tipos, função ou ferramentas de teste de acordo com o sistema de jogos digitais.",
+        "n1": "Identifica de forma incipiente os tipos, funções ou ferramentas de teste, apresentando dúvidas e demandando apoio docente.",
+        "n2": "Identifica os principais tipos, funções e ferramentas de teste, apresentando imprecisões pontuais em relação ao sistema do jogo.",
+        "n3": "Identifica tipos, função e ferramentas de teste de acordo com o sistema de jogos digitais conforme as diretrizes apresentadas.",
+        "n4": "Identifica com clareza, exatidão e autonomia tipos, função e ferramentas de teste de acordo com o sistema de jogos digitais."
+      }
+    ]
+  }
+}

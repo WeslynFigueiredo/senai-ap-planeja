@@ -1,6 +1,6 @@
 import PizZip from 'pizzip';
-import { readZipFileText, writeZipFileText } from './zip-package';
-import { setActiveSheet, enableWorkbookRecalculation } from './workbook-map';
+import { readZipFileText, writeZipFileText } from './zip-package.ts';
+import { setActiveSheet, enableWorkbookRecalculation } from './workbook-map.ts';
 
 function removeZipFile(zip: PizZip, file: string): void {
   zip.remove(file);

@@ -1,10 +1,10 @@
-import { loadZipPackage, saveZipPackage, readZipFileText, writeZipFileText } from './zip-package';
-import { getWorksheetPathByName, setActiveSheet, enableWorkbookRecalculation } from './workbook-map';
-import { setCellText, setCellNumber, setFormulaCellCachedValue } from './cell-writer';
-import { PLANO_DE_ENSINO_CELL_MAP, SA_CELL_MAP, formatSaStrategy } from './institutional-map';
-import { adjustSaSheets } from './sa-manager';
-import { populateSaLessons, type AulaData } from './lessons-writer';
-import { populatePadraoDesempenho, type CriterioDesempenhoData, type PadraoDesempenhoData } from './padrao-writer';
+import { loadZipPackage, saveZipPackage, readZipFileText, writeZipFileText } from './zip-package.ts';
+import { getWorksheetPathByName, setActiveSheet, enableWorkbookRecalculation } from './workbook-map.ts';
+import { setCellText, setCellNumber, setFormulaCellCachedValue } from './cell-writer.ts';
+import { PLANO_DE_ENSINO_CELL_MAP, SA_CELL_MAP, formatSaStrategy } from './institutional-map.ts';
+import { adjustSaSheets } from './sa-manager.ts';
+import { populateSaLessons, type AulaData } from './lessons-writer.ts';
+import { populatePadraoDesempenho, type CriterioDesempenhoData, type PadraoDesempenhoData } from './padrao-writer.ts';
 
 export type { CriterioDesempenhoData, PadraoDesempenhoData };
 
@@ -33,8 +33,15 @@ export interface PlanoGeralData {
   unidadeCurricular: string;
   cargaHorariaUc: number;
   modulo: string;
+  dataInicio?: string;
+  dataFim?: string;
+  turma?: string;
+  objetivoUc?: string;
+  ambientePedagogico?: string;
+  conhecimentosOficiais?: string[];
   capacidadesTecnicasOficiais?: string[];
   capacidadesSocioemocionaisOficiais?: string[];
+  totalAulasCount?: number;
   situacoesAprendizagem: SituacaoAprendizagemData[];
   padraoDesempenho?: PadraoDesempenhoData;
 }
@@ -117,6 +124,37 @@ export function generateWorkbookWithHeaders(
   planoXml = setCellText(planoXml, PLANO_DE_ENSINO_CELL_MAP.unidadeCurricular.cellRef, data.unidadeCurricular);
   planoXml = setCellNumber(planoXml, 'H5', data.cargaHorariaUc);
   planoXml = setCellText(planoXml, 'J5', data.modulo);
+
+  // Detailed Plano de Ensino fields (Parte 1)
+  if (data.dataInicio) planoXml = setCellText(planoXml, 'D6', data.dataInicio);
+  if (data.dataFim) planoXml = setCellText(planoXml, 'F6', data.dataFim);
+  if (data.turma) planoXml = setCellText(planoXml, 'H6', data.turma);
+
+  if (data.objetivoUc) planoXml = setCellText(planoXml, 'D7', data.objetivoUc);
+  if (data.ambientePedagogico) planoXml = setCellText(planoXml, 'J7', data.ambientePedagogico);
+
+  planoXml = setCellNumber(planoXml, 'D8', data.situacoesAprendizagem.length);
+  planoXml = setCellNumber(planoXml, 'G8', data.totalAulasCount || 0);
+
+  const tecList = data.capacidadesTecnicasOficiais || [];
+  const socList = data.capacidadesSocioemocionaisOficiais || [];
+  const conList = data.conhecimentosOficiais || [];
+
+  planoXml = setCellNumber(planoXml, 'I8', tecList.length);
+  planoXml = setCellNumber(planoXml, 'N8', socList.length);
+
+  if (tecList.length > 0) {
+    planoXml = setCellText(planoXml, 'B12', tecList.join('\n'));
+  }
+
+  if (conList.length > 0) {
+    const conText = conList.map(item => Array.isArray(item) ? item.join('\n') : String(item)).join('\n');
+    planoXml = setCellText(planoXml, 'I12', conText);
+  }
+
+  if (socList.length > 0) {
+    planoXml = setCellText(planoXml, 'B45', socList.join('\n'));
+  }
   writeZipFileText(zip, planoPath, planoXml);
   updatedSheets.push('Plano de Ensino');
 

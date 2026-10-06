@@ -240,6 +240,10 @@ export function mapJsonToPlanoGeralData(data: any) {
   const sas = Array.isArray(data.situacoes_aprendizagem) ? data.situacoes_aprendizagem : [];
   const globalAulas = Array.isArray(data.aulas) ? data.aulas : [];
 
+  const totalAulasCount = globalAulas.length > 0
+    ? globalAulas.length
+    : sas.reduce((sum: number, sa: any) => sum + (Array.isArray(sa.aulas) ? sa.aulas.length : 0), 0);
+
   const mappedSas = sas.map((sa: any, index: number) => {
     const saNumero = sa.numero || (sa.id ? parseInt(String(sa.id).replace(/\D/g, ''), 10) : index + 1) || index + 1;
     const saId = sa.id || sa.nome || `SA${String(saNumero).padStart(2, '0')}`;
@@ -271,8 +275,15 @@ export function mapJsonToPlanoGeralData(data: any) {
     unidadeCurricular: identificacao.unidade_curricular || '',
     cargaHorariaUc: Number(identificacao.carga_horaria_uc || 0),
     modulo: identificacao.modulo || '',
+    dataInicio: identificacao.data_inicio || '',
+    dataFim: identificacao.data_fim || '',
+    turma: identificacao.turma || '',
+    objetivoUc: dadosOficiais.objetivo_uc || '',
+    ambientePedagogico: identificacao.ambiente_pedagogico || '',
+    conhecimentosOficiais: dadosOficiais.conhecimentos || [],
     capacidadesTecnicasOficiais: dadosOficiais.capacidades_tecnicas || [],
     capacidadesSocioemocionaisOficiais: dadosOficiais.capacidades_socioemocionais || [],
+    totalAulasCount: totalAulasCount,
     situacoesAprendizagem: mappedSas,
     padraoDesempenho: data.padrao_desempenho,
   };
