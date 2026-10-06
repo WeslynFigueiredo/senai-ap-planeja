@@ -121,9 +121,24 @@ export function populateSaLessons(
 
     // Col K: Estratégias e Atividade
     const kParts = [];
-    if (aula.estrategias_ensino) kParts.push(`Estratégias de Ensino:\n${aula.estrategias_ensino}`);
-    if (aula.descricao_atividade) kParts.push(`Descrição da Atividade:\n${aula.descricao_atividade}`);
-    if (aula.roteiro_temporal) kParts.push(`Roteiro Temporal:\n${aula.roteiro_temporal}`);
+    if (aula.estrategias_ensino) {
+      const estStr = Array.isArray(aula.estrategias_ensino) ? aula.estrategias_ensino.join(', ') : String(aula.estrategias_ensino);
+      kParts.push(`Estratégias de Ensino:\n${estStr}`);
+    }
+    if (aula.descricao_atividade) {
+      const actStr = Array.isArray(aula.descricao_atividade) ? aula.descricao_atividade.join('\n') : String(aula.descricao_atividade);
+      kParts.push(`Descrição da Atividade:\n${actStr}`);
+    }
+    if (aula.roteiro_temporal) {
+      const rotStr = Array.isArray(aula.roteiro_temporal)
+        ? aula.roteiro_temporal.map((item: any) =>
+            typeof item === 'object' && item !== null
+              ? `${item.inicio || ''}${item.inicio && item.fim ? ' - ' : ''}${item.fim || ''}${item.inicio || item.fim ? ': ' : ''}${item.descricao || ''}`
+              : String(item)
+          ).join('\n')
+        : String(aula.roteiro_temporal);
+      kParts.push(`Roteiro Temporal:\n${rotStr}`);
+    }
     const kText = kParts.join('\n\n');
     if (kText) {
       updatedXml = setCellText(updatedXml, `K${r}`, kText);
@@ -131,10 +146,22 @@ export function populateSaLessons(
 
     // Col L: Avaliação
     const lParts = [];
-    if (aula.instrumentos_avaliacao) lParts.push(`Instrumentos:\n${aula.instrumentos_avaliacao}`);
-    if (aula.descricao_avaliacao) lParts.push(`Descrição da Avaliação:\n${aula.descricao_avaliacao}`);
-    if (aula.evidencias_aprendizagem) lParts.push(`Evidências:\n${aula.evidencias_aprendizagem}`);
-    if (aula.entrega_estudante) lParts.push(`Entrega do Estudante:\n${aula.entrega_estudante}`);
+    if (aula.instrumentos_avaliacao) {
+      const instStr = Array.isArray(aula.instrumentos_avaliacao) ? aula.instrumentos_avaliacao.join(', ') : String(aula.instrumentos_avaliacao);
+      lParts.push(`Instrumentos:\n${instStr}`);
+    }
+    if (aula.descricao_avaliacao) {
+      const descAvStr = Array.isArray(aula.descricao_avaliacao) ? aula.descricao_avaliacao.join('\n') : String(aula.descricao_avaliacao);
+      lParts.push(`Descrição da Avaliação:\n${descAvStr}`);
+    }
+    if (aula.evidencias_aprendizagem) {
+      const evidStr = Array.isArray(aula.evidencias_aprendizagem) ? aula.evidencias_aprendizagem.join('\n') : String(aula.evidencias_aprendizagem);
+      lParts.push(`Evidências:\n${evidStr}`);
+    }
+    if (aula.entrega_estudante) {
+      const entStr = Array.isArray(aula.entrega_estudante) ? aula.entrega_estudante.join('\n') : String(aula.entrega_estudante);
+      lParts.push(`Entrega do Estudante:\n${entStr}`);
+    }
     const lText = lParts.join('\n\n');
     if (lText) {
       updatedXml = setCellText(updatedXml, `L${r}`, lText);

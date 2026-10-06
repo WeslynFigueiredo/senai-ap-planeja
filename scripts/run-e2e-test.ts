@@ -1,12 +1,15 @@
 import fs from 'fs';
 import path from 'path';
-import { generateWorkbookWithHeaders, type PlanoGeralData } from '../lib/excel/openxml';
-import { loadZipPackage, readZipFileText } from '../lib/excel/zip-package';
-import { getWorksheetPathByName } from '../lib/excel/workbook-map';
-import { compareWorkbookIntegrity } from '../lib/excel/integrity-checker';
+import { generateWorkbookWithHeaders, type PlanoGeralData } from '../lib/excel/openxml.ts';
+import { validatePlanoEnsinoJson, mapJsonToPlanoGeralData } from '../lib/excel/plan-validator.ts';
+import { loadZipPackage, readZipFileText } from '../lib/excel/zip-package.ts';
+import { getWorksheetPathByName } from '../lib/excel/workbook-map.ts';
+import { compareWorkbookIntegrity } from '../lib/excel/integrity-checker.ts';
 
 const TEMPLATE_PATH = path.resolve('templates/PLANO_DE_ENSINO_MODELO.xlsm');
-const FIXTURE_PATH = path.resolve('tests/fixtures/plano-completo.json');
+const FIXTURE_PATH = process.argv[2]
+  ? path.resolve(process.argv[2])
+  : path.resolve('tests/fixtures/plano-completo.json');
 const OUTPUT_PATH = path.resolve('tmp/TESTE_COMPLETO_FINAL.xlsm');
 
 function extractCellTextOrVal(sheetXml: string, cellRef: string): string {
@@ -39,19 +42,16 @@ function main() {
   const rawFixture = fs.readFileSync(FIXTURE_PATH, 'utf-8');
   const jsonInput = JSON.parse(rawFixture);
 
+  // Validate JSON schema
+  const validation = validatePlanoEnsinoJson(jsonInput);
+  if (!validation.valid) {
+    console.error('❌ ERRO NA VALIDAÇÃO DO JSON:', validation.message);
+    process.exit(1);
+  }
+  console.log('✅ Validação do JSON executada com sucesso!');
+
   // Map JSON schema "senai-plano-ensino-1.0" to PlanoGeralData
-  const planoData: PlanoGeralData = {
-    curso: jsonInput.identificacao.curso,
-    cargaHorariaCurso: jsonInput.identificacao.carga_horaria_curso,
-    modalidade: jsonInput.identificacao.modalidade,
-    unidadeCurricular: jsonInput.identificacao.unidade_curricular,
-    cargaHorariaUc: jsonInput.identificacao.carga_horaria_uc,
-    modulo: jsonInput.identificacao.modulo,
-    capacidadesTecnicasOficiais: jsonInput.dados_oficiais.capacidades_tecnicas,
-    capacidadesSocioemocionaisOficiais: jsonInput.dados_oficiais.capacidades_socioemocionais,
-    situacoesAprendizagem: jsonInput.situacoes_aprendizagem,
-    padraoDesempenho: jsonInput.padrao_desempenho
-  };
+  const planoData: PlanoGeralData = mapJsonToPlanoGeralData(jsonInput);
 
   const templateBuffer = fs.readFileSync(TEMPLATE_PATH);
 
@@ -77,7 +77,7 @@ function main() {
   const sheetMatches = Array.from(wbXml.matchAll(/<sheet [^>]*name="([^"]+)"/g)).map(m => m[1]);
   console.log('Abas presentes no arquivo final:', sheetMatches.join(', '));
 
-  const expectedSheets = ['Base', 'Plano de Ensino', 'TempGPT', 'SA01', 'SA02', 'SA03', 'Padrão de Desempenho'];
+  const expectedSheets = ['Base', 'Plano de Ensino', 'TempGPT', ...planoData.situacoesAprendizagem.map(sa => sa.nome), 'Padrão de Desempenho'];
   const hasSa04 = sheetMatches.includes('SA04');
   const hasSa05 = sheetMatches.includes('SA05');
 
@@ -136,13 +136,13 @@ function main() {
 
   // 4. VALIDAR AULAS DETALHADAS
   console.log('\n================ 4. VALIDAÇÃO DETALHADA DAS AULAS ================');
-  jsonInput.situacoes_aprendizagem.forEach((sa: any) => {
-    const saName = `SA${String(sa.numero).padStart(2, '0')}`;
+  planoData.situacoesAprendizagem.forEach((sa: any) => {
+    const saName = sa.nome;
     const saPath = getWorksheetPathByName(genZip, saName);
     const saXml = readZipFileText(genZip, saPath);
 
     console.log(`\n--- Aulas da ${saName} ---`);
-    sa.aulas.forEach((aula: any, idx: number) => {
+    (sa.aulas || []).forEach((aula: any, idx: number) => {
       const row = 13 + idx * 2;
       console.log(`  -> Aula ${aula.numero} (Linha ${row}):`);
       console.log(`       Data (Col B):          ${extractCellTextOrVal(saXml, `B${row}`)}`);
