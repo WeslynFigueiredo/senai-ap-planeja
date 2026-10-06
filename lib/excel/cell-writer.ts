@@ -201,3 +201,23 @@ export function setFormulaCellCachedValue(
 ): string {
   return setCellValueInSheetXml(sheetXml, cellRef, type, value);
 }
+
+export function setRowHeight(sheetXml: string, rowNum: number, height: number): string {
+  const formattedHt = height.toFixed(1);
+  const rowRegex = new RegExp(`(<row\\s+[^>]*?\\br="${rowNum}"[^>]*?>)`, 'i');
+  return sheetXml.replace(rowRegex, (match) => {
+    let rowTag = match;
+    if (/\bht="[^"]*"/.test(rowTag)) {
+      rowTag = rowTag.replace(/\bht="[^"]*"/, `ht="${formattedHt}"`);
+    } else {
+      rowTag = rowTag.replace(/<row\s+/, `<row ht="${formattedHt}" `);
+    }
+    if (!/\bcustomHeight="[^"]*"/.test(rowTag)) {
+      rowTag = rowTag.replace(/<row\s+/, `<row customHeight="1" `);
+    } else {
+      rowTag = rowTag.replace(/\bcustomHeight="[^"]*"/, 'customHeight="1"');
+    }
+    return rowTag;
+  });
+}
+

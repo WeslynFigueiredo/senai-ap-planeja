@@ -153,7 +153,35 @@ function main() {
       console.log(`       Resultado (Col J):     "${extractCellTextOrVal(saXml, `J${row}`).slice(0, 40)}..."`);
       console.log(`       Estratégias (Col K):   "${extractCellTextOrVal(saXml, `K${row}`).replace(/\n/g, ' \\n ').slice(0, 50)}..."`);
       console.log(`       Avaliação (Col L):     "${extractCellTextOrVal(saXml, `L${row}`).replace(/\n/g, ' \\n ').slice(0, 50)}..."`);
+
+      // Assertions on final XML content of K and L cells
+      const kContent = extractCellTextOrVal(saXml, `K${row}`);
+      const lContent = extractCellTextOrVal(saXml, `L${row}`);
+
+      if (!kContent.includes('Estratégias de Ensino:')) throw new Error(`[SA XML Assert Error] ${saName} K${row} sem 'Estratégias de Ensino:'`);
+      if (!kContent.includes('Descrição da atividade:')) throw new Error(`[SA XML Assert Error] ${saName} K${row} sem 'Descrição da atividade:'`);
+      if (!kContent.includes('Roteiro da aula:')) throw new Error(`[SA XML Assert Error] ${saName} K${row} sem 'Roteiro da aula:'`);
+
+      if (!lContent.includes('Instrumentos:')) throw new Error(`[SA XML Assert Error] ${saName} L${row} sem 'Instrumentos:'`);
+      if (!lContent.includes('Avaliação:')) throw new Error(`[SA XML Assert Error] ${saName} L${row} sem 'Avaliação:'`);
+      if (!lContent.includes('Evidências:')) throw new Error(`[SA XML Assert Error] ${saName} L${row} sem 'Evidências:'`);
+      if (!lContent.includes('Entrega:')) throw new Error(`[SA XML Assert Error] ${saName} L${row} sem 'Entrega:'`);
+
+      if (saName === 'SA01' && row === 13) {
+        if (!kContent.includes('07h30')) throw new Error(`[SA XML Assert Error] SA01 K13 sem horário '07h30'`);
+        if (!kContent.includes('12h50')) throw new Error(`[SA XML Assert Error] SA01 K13 sem horário '12h50'`);
+      }
     });
+
+    // Audit row heights in current SA sheet: NO row ht may exceed 409pt (Excel limit)
+    const rowMatches = Array.from(saXml.matchAll(/<row\s+[^>]*?\br="(\d+)"[^>]*?\bht="([^"]+)"[^>]*?>/g));
+    for (const m of rowMatches) {
+      const rNum = parseInt(m[1], 10);
+      const htVal = parseFloat(m[2]);
+      if (htVal > 409.0) {
+        throw new Error(`[Excel Max Height Violation Error] ${saName} linha ${rNum} possui ht=${htVal}pt > 409pt!`);
+      }
+    }
   });
 
   // 5. VALIDAR PADRÃO DE DESEMPENHO

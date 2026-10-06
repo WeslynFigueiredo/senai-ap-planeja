@@ -1,5 +1,19 @@
-import { setCellText, setCellNumber, setFormulaCellCachedValue } from './cell-writer.ts';
+import { setCellText, setCellNumber, setFormulaCellCachedValue, setRowHeight } from './cell-writer.ts';
 import { normalizeStrategyName, normalizeInstrumentName } from './institutional-map.ts';
+
+function countVisualLines(text: string, colCharWidth: number): number {
+  if (!text) return 0;
+  const lines = text.split('\n');
+  let count = 0;
+  for (const line of lines) {
+    if (line.length === 0) {
+      count += 1;
+    } else {
+      count += Math.ceil(line.length / colCharWidth);
+    }
+  }
+  return count;
+}
 
 export interface AulaData {
   numero: number;
@@ -195,6 +209,32 @@ export function populateSaLessons(
     if (lText) {
       updatedXml = setCellText(updatedXml, `L${r}`, lText);
     }
+
+    // Dynamic row height adjustment for 2-row lesson slot (row r and row r+1)
+    // Excel hard limit: no single row height may exceed 409pt (ht <= 409.0)
+    const linesK = countVisualLines(kText, 40);
+    const linesL = countVisualLines(lText, 48);
+    const linesD = countVisualLines(capText, 38);
+    const linesG = countVisualLines(conText, 32);
+    const linesI = countVisualLines(aula.desafio || '', 32);
+    const linesJ = countVisualLines(aula.resultado_esperado || '', 32);
+
+    const maxBlockLines = Math.max(linesK, linesL, linesD, linesG, linesI, linesJ, 1);
+    const totalNeededHeight = Math.max(202.35, Math.ceil(maxBlockLines * 12.5 + 15));
+
+    let topHeight: number;
+    let bottomHeight: number;
+
+    if (totalNeededHeight <= 409.0) {
+      topHeight = Math.max(24.6, totalNeededHeight);
+      bottomHeight = 18.0;
+    } else {
+      topHeight = 409.0;
+      bottomHeight = Math.min(409.0, Math.max(18.0, totalNeededHeight - 409.0));
+    }
+
+    updatedXml = setRowHeight(updatedXml, r, topHeight);
+    updatedXml = setRowHeight(updatedXml, r + 1, bottomHeight);
   });
 
   // 5. Update cached value of total CH formula cell (L6)
