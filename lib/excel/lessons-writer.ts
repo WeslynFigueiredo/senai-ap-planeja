@@ -134,20 +134,30 @@ export function populateSaLessons(
       updatedXml = setCellText(updatedXml, `J${r}`, aula.resultado_esperado);
     }
 
-    // Col K: Estratégias de Ensino, Descrição da Atividade e Roteiro da Aula
-    const kParts = [];
-    if (aula.estrategias_ensino) {
-      const estList = Array.isArray(aula.estrategias_ensino)
-        ? aula.estrategias_ensino
-        : [aula.estrategias_ensino];
-      const estStr = estList.map(e => normalizeStrategyName(String(e)).normalized).join(' | ');
-      kParts.push(`Estratégias de Ensino:\n${estStr}`);
+    // Col K: Estratégias de Ensino (Dropdown na linha r; Detalhamento na linha r+1)
+    const estList = aula.estrategias_ensino
+      ? (Array.isArray(aula.estrategias_ensino) ? aula.estrategias_ensino : [aula.estrategias_ensino])
+      : [];
+    const normalizedEstList = estList
+      .map(e => normalizeStrategyName(String(e)).normalized)
+      .filter(Boolean);
+
+    // K{r}: Valor único para manter a validação do dropdown institucional
+    const mainStrategy = normalizedEstList[0] || '';
+    if (mainStrategy) {
+      updatedXml = setCellText(updatedXml, `K${r}`, mainStrategy);
+    }
+
+    // K{r+1}: Bloco detalhado da aula (Estratégias utilizadas, Descrição e Roteiro)
+    const kDetailParts = [];
+    if (normalizedEstList.length > 0) {
+      kDetailParts.push(`Estratégias utilizadas:\n${normalizedEstList.join(' | ')}`);
     }
     if (aula.descricao_atividade) {
       const actStr = Array.isArray(aula.descricao_atividade)
         ? aula.descricao_atividade.join('\n')
         : String(aula.descricao_atividade);
-      kParts.push(`Descrição da atividade:\n${actStr}`);
+      kDetailParts.push(`Descrição da atividade:\n${actStr}`);
     }
     if (aula.roteiro_temporal) {
       let rotStr = '';
@@ -165,27 +175,37 @@ export function populateSaLessons(
       } else {
         rotStr = String(aula.roteiro_temporal);
       }
-      kParts.push(`Roteiro da aula:\n${rotStr}`);
+      kDetailParts.push(`Roteiro da aula:\n${rotStr}`);
     }
-    const kText = kParts.join('\n\n');
-    if (kText) {
-      updatedXml = setCellText(updatedXml, `K${r}`, kText);
+    const kDetailText = kDetailParts.join('\n\n');
+    if (kDetailText) {
+      updatedXml = setCellText(updatedXml, `K${r + 1}`, kDetailText);
     }
 
-    // Col L: Instrumentos de Avaliação da Aprendizagem, Avaliação, Evidências e Entrega
-    const lParts = [];
-    if (aula.instrumentos_avaliacao) {
-      const instList = Array.isArray(aula.instrumentos_avaliacao)
-        ? aula.instrumentos_avaliacao
-        : [aula.instrumentos_avaliacao];
-      const instStr = instList.map(i => normalizeInstrumentName(String(i)).normalized).join(', ');
-      lParts.push(`Instrumentos:\n${instStr}`);
+    // Col L: Instrumentos de Avaliação (Dropdown na linha r; Detalhamento na linha r+1)
+    const instList = aula.instrumentos_avaliacao
+      ? (Array.isArray(aula.instrumentos_avaliacao) ? aula.instrumentos_avaliacao : [aula.instrumentos_avaliacao])
+      : [];
+    const normalizedInstList = instList
+      .map(i => normalizeInstrumentName(String(i)).normalized)
+      .filter(Boolean);
+
+    // L{r}: Valor único para manter a validação do dropdown institucional
+    const mainInstrument = normalizedInstList[0] || '';
+    if (mainInstrument) {
+      updatedXml = setCellText(updatedXml, `L${r}`, mainInstrument);
+    }
+
+    // L{r+1}: Bloco detalhado (Instrumentos utilizados, Avaliação, Evidências e Entrega)
+    const lDetailParts = [];
+    if (normalizedInstList.length > 0) {
+      lDetailParts.push(`Instrumentos utilizados:\n${normalizedInstList.join(' | ')}`);
     }
     if (aula.descricao_avaliacao) {
       const descAvStr = Array.isArray(aula.descricao_avaliacao)
         ? aula.descricao_avaliacao.join('\n')
         : String(aula.descricao_avaliacao);
-      lParts.push(`Avaliação:\n${descAvStr}`);
+      lDetailParts.push(`Avaliação:\n${descAvStr}`);
     }
     if (aula.evidencias_aprendizagem) {
       let evidItems: string[] = [];
@@ -197,44 +217,36 @@ export function populateSaLessons(
       const formattedEvid = evidItems
         .map(e => e.startsWith('•') ? e : `• ${e}`)
         .join('\n');
-      lParts.push(`Evidências:\n${formattedEvid}`);
+      lDetailParts.push(`Evidências:\n${formattedEvid}`);
     }
     if (aula.entrega_estudante) {
       const entStr = Array.isArray(aula.entrega_estudante)
         ? aula.entrega_estudante.join('\n')
         : String(aula.entrega_estudante);
-      lParts.push(`Entrega:\n${entStr}`);
+      lDetailParts.push(`Entrega:\n${entStr}`);
     }
-    const lText = lParts.join('\n\n');
-    if (lText) {
-      updatedXml = setCellText(updatedXml, `L${r}`, lText);
+    const lDetailText = lDetailParts.join('\n\n');
+    if (lDetailText) {
+      updatedXml = setCellText(updatedXml, `L${r + 1}`, lDetailText);
     }
 
-    // Dynamic row height adjustment for 2-row lesson slot (row r and row r+1)
-    // Excel hard limit: no single row height may exceed 409pt (ht <= 409.0)
-    const linesK = countVisualLines(kText, 40);
-    const linesL = countVisualLines(lText, 48);
+    // Ajuste de altura das linhas do bloco (r: topo para dropdown; r+1: detalhamento)
+    // Linha superior (r): altura padrão institucional (24.6pt)
+    updatedXml = setRowHeight(updatedXml, r, 24.6);
+
+    // Linha inferior (r+1): altura dinâmica para detalhamento (máximo 409pt por linha)
+    const linesKDetail = countVisualLines(kDetailText, 40);
+    const linesLDetail = countVisualLines(lDetailText, 48);
     const linesD = countVisualLines(capText, 38);
     const linesG = countVisualLines(conText, 32);
     const linesI = countVisualLines(aula.desafio || '', 32);
     const linesJ = countVisualLines(aula.resultado_esperado || '', 32);
 
-    const maxBlockLines = Math.max(linesK, linesL, linesD, linesG, linesI, linesJ, 1);
-    const totalNeededHeight = Math.max(202.35, Math.ceil(maxBlockLines * 12.5 + 15));
+    const maxDetailLines = Math.max(linesKDetail, linesLDetail, linesD, linesG, linesI, linesJ, 1);
+    const calculatedDetailHt = Math.max(177.75, Math.ceil(maxDetailLines * 12.5 + 15));
+    const detailHeight = Math.min(409.0, calculatedDetailHt);
 
-    let topHeight: number;
-    let bottomHeight: number;
-
-    if (totalNeededHeight <= 409.0) {
-      topHeight = Math.max(24.6, totalNeededHeight);
-      bottomHeight = 18.0;
-    } else {
-      topHeight = 409.0;
-      bottomHeight = Math.min(409.0, Math.max(18.0, totalNeededHeight - 409.0));
-    }
-
-    updatedXml = setRowHeight(updatedXml, r, topHeight);
-    updatedXml = setRowHeight(updatedXml, r + 1, bottomHeight);
+    updatedXml = setRowHeight(updatedXml, r + 1, detailHeight);
   });
 
   // 5. Update cached value of total CH formula cell (L6)

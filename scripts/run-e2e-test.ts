@@ -151,25 +151,30 @@ function main() {
       console.log(`       Conhecimentos (Col G): "${extractCellTextOrVal(saXml, `G${row}`).replace(/\n/g, ' | ').slice(0, 50)}..."`);
       console.log(`       Desafio (Col I):       "${extractCellTextOrVal(saXml, `I${row}`).slice(0, 40)}..."`);
       console.log(`       Resultado (Col J):     "${extractCellTextOrVal(saXml, `J${row}`).slice(0, 40)}..."`);
-      console.log(`       Estratégias (Col K):   "${extractCellTextOrVal(saXml, `K${row}`).replace(/\n/g, ' \\n ').slice(0, 50)}..."`);
-      console.log(`       Avaliação (Col L):     "${extractCellTextOrVal(saXml, `L${row}`).replace(/\n/g, ' \\n ').slice(0, 50)}..."`);
+      const kDropdownVal = extractCellTextOrVal(saXml, `K${row}`);
+      const kDetailContent = extractCellTextOrVal(saXml, `K${row + 1}`);
+      const lDropdownVal = extractCellTextOrVal(saXml, `L${row}`);
+      const lDetailContent = extractCellTextOrVal(saXml, `L${row + 1}`);
 
-      // Assertions on final XML content of K and L cells
-      const kContent = extractCellTextOrVal(saXml, `K${row}`);
-      const lContent = extractCellTextOrVal(saXml, `L${row}`);
+      console.log(`       Estratégia Dropdown (K${row}):   "${kDropdownVal}"`);
+      console.log(`       Detalhamento K (K${row + 1}):      "${kDetailContent.replace(/\n/g, ' \\n ').slice(0, 50)}..."`);
+      console.log(`       Instrumento Dropdown (L${row}):  "${lDropdownVal}"`);
+      console.log(`       Detalhamento L (L${row + 1}):      "${lDetailContent.replace(/\n/g, ' \\n ').slice(0, 50)}..."`);
 
-      if (!kContent.includes('Estratégias de Ensino:')) throw new Error(`[SA XML Assert Error] ${saName} K${row} sem 'Estratégias de Ensino:'`);
-      if (!kContent.includes('Descrição da atividade:')) throw new Error(`[SA XML Assert Error] ${saName} K${row} sem 'Descrição da atividade:'`);
-      if (!kContent.includes('Roteiro da aula:')) throw new Error(`[SA XML Assert Error] ${saName} K${row} sem 'Roteiro da aula:'`);
+      // Assertions on final XML content of K and L dropdown/detail cells
+      if (kDropdownVal === '[VAZIO]') throw new Error(`[SA XML Assert Error] ${saName} K${row} (dropdown) está vazio!`);
+      if (lDropdownVal === '[VAZIO]') throw new Error(`[SA XML Assert Error] ${saName} L${row} (dropdown) está vazio!`);
 
-      if (!lContent.includes('Instrumentos:')) throw new Error(`[SA XML Assert Error] ${saName} L${row} sem 'Instrumentos:'`);
-      if (!lContent.includes('Avaliação:')) throw new Error(`[SA XML Assert Error] ${saName} L${row} sem 'Avaliação:'`);
-      if (!lContent.includes('Evidências:')) throw new Error(`[SA XML Assert Error] ${saName} L${row} sem 'Evidências:'`);
-      if (!lContent.includes('Entrega:')) throw new Error(`[SA XML Assert Error] ${saName} L${row} sem 'Entrega:'`);
+      if (!kDetailContent.includes('Descrição da atividade:')) throw new Error(`[SA XML Assert Error] ${saName} K${row + 1} sem 'Descrição da atividade:'`);
+      if (!kDetailContent.includes('Roteiro da aula:')) throw new Error(`[SA XML Assert Error] ${saName} K${row + 1} sem 'Roteiro da aula:'`);
+
+      if (!lDetailContent.includes('Avaliação:')) throw new Error(`[SA XML Assert Error] ${saName} L${row + 1} sem 'Avaliação:'`);
+      if (!lDetailContent.includes('Evidências:')) throw new Error(`[SA XML Assert Error] ${saName} L${row + 1} sem 'Evidências:'`);
+      if (!lDetailContent.includes('Entrega:')) throw new Error(`[SA XML Assert Error] ${saName} L${row + 1} sem 'Entrega:'`);
 
       if (saName === 'SA01' && row === 13) {
-        if (!kContent.includes('07h30')) throw new Error(`[SA XML Assert Error] SA01 K13 sem horário '07h30'`);
-        if (!kContent.includes('12h50')) throw new Error(`[SA XML Assert Error] SA01 K13 sem horário '12h50'`);
+        if (!kDetailContent.includes('07h30')) throw new Error(`[SA XML Assert Error] SA01 K14 sem horário '07h30'`);
+        if (!kDetailContent.includes('12h50')) throw new Error(`[SA XML Assert Error] SA01 K14 sem horário '12h50'`);
       }
     });
 
