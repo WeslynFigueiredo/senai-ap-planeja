@@ -1,8 +1,5 @@
 <div align="center">
 
-  <!-- Logo placeholder: public/brand/logo.png -->
-  <!-- <img src="public/brand/logo.png" alt="SENAI AP Planeja Logo" width="180" /> -->
-
   # SENAI AP Planeja
   ### Do plano ao Excel institucional
 
@@ -26,10 +23,10 @@
 
 O **SENAI AP Planeja** resolve o desafio de converter dados estruturados de planejamento pedagógico no formato de planilha oficial `.xlsm` exigido pelas instituições do SENAI.
 
-Muitas ferramentas tradicionais de exportação destroem macros VBA, desalinham células mescladas, desconfiguram fórmulas em cadeia ou corrompem arquivos codificados em OpenXML. O **SENAI AP Planeja** opera manipulando o pacote de arquivos do Excel diretamente em memória via OpenXML, garantindo que o documento final mantenha **100% de fidelidade visual, estrutural e funcional**.
+Muitas ferramentas tradicionais de exportação destroem macros VBA, desalinham células mescladas, desconfiguram fórmulas em cadeia ou corrompem arquivos codificados em OpenXML. O **SENAI AP Planeja** opera manipulando o pacote de arquivos do Excel diretamente em memória via OpenXML, com foco em preservar estruturas, fórmulas e componentes do modelo institucional. A compatibilidade final deve ser verificada no Microsoft Excel, especialmente após alterações no template ou nas macros.
 
 ### Destaques do Sistema
-* **Preservação de Macros VBA**: Mantém o arquivo de código `vbaProject.bin` original intocado.
+* **Preservação de Macros VBA**: O motor procura manter o componente `vbaProject.bin` no arquivo gerado; isso não significa que as macros estejam habilitadas ou homologadas em execução no Excel.
 * **Preservação de Fórmulas e Estilos**: Atualiza apenas os valores em cache (`<v>`) sem sobrescrever expressões de fórmulas (`<f>`).
 * **Gerenciamento Dinâmico de Planilhas**: Adiciona ou remove abas de Situação de Aprendizagem (`SA01`, `SA02`, etc.) sincronizando a estrutura de relacionamentos do documento.
 * **Preenchimento de Aulas e Padrão de Desempenho**: Preenche a grade de aulas (com validações de carga horária) e a matriz do Padrão de Desempenho (com validação de cobertura de capacidades e pesos somando 100%).
@@ -37,6 +34,29 @@ Muitas ferramentas tradicionais de exportação destroem macros VBA, desalinham 
 
 ---
 
+## 🎬 Demonstração local e evidências
+
+Este repositório ainda não contém capturas reais da interface nem URL pública de produção confirmada. Para apresentar o projeto, utilize dados de teste:
+
+1. Execute os comandos da seção [Como Executar Localmente](#-como-executar-localmente).
+2. Acesse `http://localhost:3000`.
+3. Envie `tests/fixtures/plano-completo.json`, após conferir que os dados são apropriados para demonstração.
+4. Confira o resultado da validação e o resumo do planejamento.
+5. Gere o arquivo `.xlsm`, faça o download e abra-o em ambiente de teste no Microsoft Excel.
+6. Confira as abas **Plano de Ensino**, **SA** e **Padrão de Desempenho**, além de fórmulas, estilos e dados preenchidos.
+
+### Galeria de evidências — pendente
+
+| Evidência a capturar | Conteúdo |
+| :--- | :--- |
+| Tela inicial | Seleção e envio do JSON |
+| Resumo validado | Dados gerais do plano fictício |
+| Geração concluída | Disponibilidade do download |
+| Excel gerado | Abas e formatação conferidas no Microsoft Excel |
+
+> **Transparência:** essas imagens ainda não foram capturadas, e os scripts de teste não foram executados nesta revisão documental. As capturas futuras devem conter somente dados fictícios ou autorizados.
+
+---
 ## 🔄 Fluxo de Funcionamento
 
 O diagrama abaixo ilustra a jornada desde a entrada do planejamento até o download do arquivo oficial:
@@ -180,20 +200,20 @@ gerador-excel-senai/
 ## 🚀 Como Executar Localmente
 
 ### Pré-requisitos
-* **Node.js**: Versão `18.x` ou superior (recomendado `22.x`).
-* **npm**: Versão `9.x` ou superior.
+* **Node.js**: utilize preferencialmente a versão registrada em `.node-version` (`22.14.0`).
+* **npm**: versão compatível com o Node.js instalado.
 
 ### Passo a Passo
 
 1. **Clonar o repositório**:
    ```bash
-   git clone https://github.com/WeslynFigueiredo/gerador-excel-senai-inicial.git
-   cd gerador-excel-senai-inicial
+   git clone https://github.com/WeslynFigueiredo/senai-ap-planeja.git
+   cd senai-ap-planeja
    ```
 
 2. **Instalar as dependências**:
    ```bash
-   npm install
+   npm ci
    ```
 
 3. **Iniciar o servidor de desenvolvimento**:
@@ -237,7 +257,7 @@ Para garantir que o arquivo baixado abra perfeitamente no Excel sem exibir mensa
 * `xl/printerSettings/`: Configurações de página e impressão originais.
 * `<f>` (Fórmulas): Expressões matemáticas (como `=SUM(C13:C54)` na célula `L6`) permanecem intactas.
 
-> **Nota para o Docente**: Ao abrir o arquivo `.xlsm` baixado no Microsoft Excel, a barra amarela de proteção de segurança (*"Aviso de Segurança: As macros foram desabilitadas"*) poderá ser exibida pelo Excel devido às configurações locais da máquina. Isso é o comportamento normal do Excel para arquivos com macros baixados da web. As macros permanecem 100% ativas e preservadas.
+> **Segurança do Excel:** arquivos `.xlsm` obtidos pela internet podem ter macros bloqueadas pelo Microsoft Excel. A presença de `vbaProject.bin` não comprova que as macros estejam habilitadas ou funcionando. Utilize somente modelos institucionais autorizados e siga as políticas de segurança da organização.
 
 ---
 
@@ -247,8 +267,8 @@ Antes de iniciar a montagem do documento, o plano passa pelas seguintes checagen
 
 | Regra | Condição de Validação | Mensagem de Retorno ao Usuário |
 | :--- | :--- | :--- |
-| **Aprovação do Plano** | `status.plano_aprovado === true` | *O Plano de Ensino precisa estar aprovado antes da geração do Excel.* |
-| **Aprovação do Padrão** | `status.padrao_desempenho_aprovado === true` | *O Padrão de Desempenho precisa estar aprovado antes da geração do Excel.* |
+| **Aprovação do Plano** | Bloqueio quando `status.plano_aprovado === false` | *O Plano de Ensino precisa estar aprovado antes da geração do Excel.* |
+| **Aprovação do Padrão** | Bloqueio quando `status.padrao_desempenho_aprovado === false` | *O Padrão de Desempenho precisa estar aprovado antes da geração do Excel.* |
 | **Soma dos Pesos** | $\sum \text{pesos} = 100\%$ | *Os pesos do Padrão de Desempenho somam X%. O total precisa ser exatamente 100%.* |
 | **Cobertura de Capacidades** | Todas as capacidades oficiais devem estar no Padrão | *A capacidade oficial abaixo não está representada no Padrão de Desempenho: ...* |
 | **Carga Horária das SAs** | $\sum \text{CH}(aulas) = \text{CH}(SA)$ | *Divergência na carga horária da SAxx: carga declarada = Xh; soma das aulas = Yh.* |
@@ -266,7 +286,9 @@ Antes de iniciar a montagem do documento, o plano passa pelas seguintes checagen
 
 ## 🧪 Testes Automatizados
 
-O projeto inclui uma suíte de testes de integração executáveis diretamente via terminal:
+O projeto contém **sete scripts de teste**, sendo três configurados como comandos npm. Eles abrangem OpenXML, cabeçalhos, situações de aprendizagem, aulas, padrão de desempenho e fluxo integrado. **A existência dos scripts não comprova aprovação:** é necessário executá-los e verificar os resultados. Alguns registram avisos no console sem necessariamente retornar falha.
+
+Utilize a versão do Node.js indicada em `.node-version`:
 
 ```bash
 # Teste base de manipulação OpenXML
@@ -295,7 +317,7 @@ node --experimental-strip-types scripts/run-e2e-test.ts
 
 ## ☁️ Deploy
 
-O projeto é 100% compatível com ambientes Node.js e preparado para hospedagem em plataformas como **Render**, **Vercel** ou **AWS**:
+O projeto utiliza runtime **Node.js** na rota de geração. Hospedagem em plataformas como **Render**, **Vercel** ou **AWS** requer validar a inclusão do template `.xlsm` e o download no ambiente escolhido:
 
 * **Configuração de Runtime na API**: `export const runtime = "nodejs";`
 * **URL de Produção**: *em configuração*
@@ -328,3 +350,9 @@ Projeto desenvolvido como solução de apoio ao fluxo de planejamento docente e 
 Desenvolvido e mantido por **Weslyn Figueiredo**.
 
 * **GitHub**: [@WeslynFigueiredo](https://github.com/WeslynFigueiredo)
+
+---
+
+## 🔗 Portfólio e contato
+
+[WeslynLab — Portal profissional](https://weslynlab.com.br/) · [GitHub](https://github.com/WeslynFigueiredo) · [LinkedIn](https://www.linkedin.com/in/weslyn-figueiredo/)
