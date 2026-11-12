@@ -34,12 +34,12 @@ Muitas ferramentas tradicionais de exportação destroem macros VBA, desalinham 
 
 ---
 
-## 🎬 Demonstração local e evidências
+## 🎬 Demonstração online, local e evidências
 
-Este repositório ainda não contém capturas reais da interface nem URL pública de produção confirmada. Para apresentar o projeto, utilize dados de teste:
+**Aplicação online:** [https://planeja.weslynlab.com.br](https://planeja.weslynlab.com.br). O endereço de produção e a aparência da tela inicial foram informados pelo autor; a geração ponta a ponta de um XLSM em produção ainda não foi verificada nesta revisão. Para validar o processo sem enviar dados institucionais reais, utilize dados de teste:
 
-1. Execute os comandos da seção [Como Executar Localmente](#-como-executar-localmente).
-2. Acesse `http://localhost:3000`.
+1. Acesse a [aplicação online](https://planeja.weslynlab.com.br/) ou execute localmente conforme [Como Executar Localmente](#-como-executar-localmente).
+2. No ambiente local, acesse `http://localhost:3000` (no online, utilize o endereço acima).
 3. Envie `tests/fixtures/plano-completo.json`, após conferir que os dados são apropriados para demonstração.
 4. Confira o resultado da validação e o resumo do planejamento.
 5. Gere o arquivo `.xlsm`, faça o download e abra-o em ambiente de teste no Microsoft Excel.
@@ -317,10 +317,10 @@ node --experimental-strip-types scripts/run-e2e-test.ts
 
 ## ☁️ Deploy
 
-O projeto utiliza runtime **Node.js** na rota de geração. Hospedagem em plataformas como **Render**, **Vercel** ou **AWS** requer validar a inclusão do template `.xlsm` e o download no ambiente escolhido:
+A aplicação possui endereço público em **https://planeja.weslynlab.com.br**. O projeto utiliza runtime **Node.js** na rota de geração. Hospedagem em plataformas como **Render**, **Vercel** ou **AWS** requer validar a inclusão do template `.xlsm` e o download no ambiente escolhido:
 
 * **Configuração de Runtime na API**: `export const runtime = "nodejs";`
-* **URL de Produção**: *em configuração*
+* **URL de Produção**: [planeja.weslynlab.com.br](https://planeja.weslynlab.com.br)
 
 ---
 
